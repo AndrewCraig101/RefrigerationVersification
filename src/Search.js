@@ -115,7 +115,7 @@ class Search extends Component {
         return (
             <>
         
-                <form onSubmit= {this.handleSubmit}>
+                <form onSubmit= {this.handleSubmit} className="search-bar">
                     <label className="sr-only" htmlFor="search">Search</label>
                     <input type="text" placeholder="enter word here" id="search" value={this.state.userSearch} onChange={this.handleChange}></input>
                     <button type="submit" >Search</button>

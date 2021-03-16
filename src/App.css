@@ -31,6 +31,52 @@ img {
   max-width: 100% 
 }
 
+/* ******MAIN SECTION******* */
+
+main {
+  background-image: url(./background-image-fridge1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 400;
+  text-transform: lowercase;
+  display: flex;
+}
+
+.logo {
+  width: 250px;
+}
+
+.poems-container{
+  width: 50%;
+}
+
+/* ********SEARCH SECTION******* */
+
+.search-bar {
+  position: absolute;
+  margin: -150px 0 0 300px;
+}
+
+input[type="text"],
+button {
+  font-family: 'Kanit', sans-serif;
+}
+
+
+/* **********POEM RESULTS AND SUGGESTIONS********** */
+
+
+
+
+
+
+
+
+
+
+
 .dropBox {
   width: 400px;
   height: 400px;
@@ -48,6 +94,21 @@ img {
 li {
   font-size: 1.5rem;
 }
+
+
+
+
+/* ********** FRIDGE IMAGE********** */
+
+/* .fridge-container{
+  width: 50%;
+}
+
+.fridge-image {
+  max-width: 600px;
+} */
+
+
 
 
 
