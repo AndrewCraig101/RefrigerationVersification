@@ -120,30 +120,35 @@ class Search extends Component {
                     <input type="text" placeholder="enter word here" id="search" value={this.state.userSearch} onChange={this.handleChange}></input>
                     <button type="submit" >Search</button>
                 </form>
+                <div className="words-container">
+                    <div className="left-side">
+                        <h2>Results</h2>
+                        <div class="dropBox resultsArea" onDrop={this.drop} onDragOver={this.allowDrop} onDragStart={this.drag}>
+                            
 
-                <h2>Results</h2>
-                <div class="dropBox resultsArea" onDrop={this.drop} onDragOver={this.allowDrop} onDragStart={this.drag}>
+                        <ul >
+                            {
+                                this.state.chosenWord.map((results, index ) => {
+                                return (
+                                    <li  id={index} onDragStart={this.drag}  draggable="true" key={index}>{results.word}</li>
+                                        
+                                )
+                                })
+                            }
+                        </ul>
                     
+                        </div>
+                        <br/>
+                        <h2>Function and Suffixes</h2>
+                        <div class="dropBox suffixArea" onDrop={this.drop} onDragOver={this.allowDrop} onDragStart={this.drag}></div>
+                    </div>
 
-                <ul >
-                    {
-                        this.state.chosenWord.map((results, index ) => {
-                        return (
-                            <li  id={index} onDragStart={this.drag}  draggable="true" key={index}>{results.word}</li>
-                                   
-                        )
-                        })
-                    }
-                </ul>
-            
+                    <br/>
+                    <div className="right-side">
+                        <h2>Poem Area</h2>
+                        <div class="dropBox poemArea" onDrop={this.drop} onDragOver={this.allowDrop} onDragStart={this.drag}></div>
+                    </div>
                 </div>
-                <br/>
-                <h2>Function and Suffixes</h2>
-                <div class="dropBox suffixArea" onDrop={this.drop} onDragOver={this.allowDrop} onDragStart={this.drag}></div>
-
-                <br/>
-                <h2>Poem Area</h2>
-                <div class="dropBox poemArea" onDrop={this.drop} onDragOver={this.allowDrop} onDragStart={this.drag}></div>
             </>
             
         )
