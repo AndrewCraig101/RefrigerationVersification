@@ -12,6 +12,7 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 html { 
   font-size: 62.5%; 
 } 
+
 body, 
 ul, 
 h1, 
@@ -28,6 +29,28 @@ a {
 } 
 img { 
   max-width: 100% 
+}
+
+#dropBox {
+  width: 400px;
+  height: 400px;
+  padding: 10px;
+  border: 1px solid #AAAAAA;
+  display:flex;
+  flex-wrap: nowrap;
+
+}
+/* body {
+  display: flex;
+} */
+.word {
+  margin: 20px;
+  width: 100px;
+  background-color: red;
+}
+
+li {
+  font-size: 1.5rem;
 }
 
 

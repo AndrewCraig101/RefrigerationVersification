@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { Component } from 'react';
 
+
  //you have to call it like this when creating a constructor because thems the rules 
 class Search extends Component {
 
@@ -17,7 +18,17 @@ class Search extends Component {
             chosenWord: [],
         }
     }
-
+    // function allowDrop(ev) {
+    //     ev.preventDefault();
+    // }
+    // function drag(ev) {
+    //     ev.dataTransfer.setData(“text”, ev.target.id);
+    // }
+    // function drop(ev) {
+    //     ev.preventDefault();
+    //     var data = ev.dataTransfer.getData(“text”);
+    //     ev.target.appendChild(document.getElementById(data));
+    // }
 
     //this function allows us to grab the value from the input without hitting the submit value
 
@@ -40,6 +51,20 @@ class Search extends Component {
         })
     }
 
+     allowDrop = (e) => {
+        e.preventDefault();
+    }
+     drag = (e) => {
+        e.dataTransfer.setData("text/plain", e.target.id);
+    }
+    drop = (e) => {
+        e.preventDefault();
+        // Get the data, which is the id of the drop target
+        let data = e.dataTransfer.getData("text");
+        e.target.append(document.getElementById(data));
+        
+       
+    }
 
     // this function allows us to only call api on user search
     userSearch = () => {
@@ -52,17 +77,26 @@ class Search extends Component {
                 topics: this.state.userSearch,
                 rel_bga: this.state.userSearch,
                 format: "JSON",
-                max: 40,
+                max: 10,
             },
             }).then((res) => {
                 console.log(res)
                 const wordResults = res.data
                 console.log(wordResults)
+
+                const filteredWordResults = wordResults.filter((results) => {
+                    if 
+                    (results.word === 'who' || results.word === "what" || results.word === "when" || results.word === "where" || results.word === "why" || results.word === "how" || results.word === "the" || results.word === "a" || results.word === "is" || results.word === "he" || results.word === "his" || results.word === "she" || results.word === "her" || results.word === "hers" || results.word === "they" || results.word === "them" || results.word === "their" || results.word === "there" || results.word === "are" || results.word === "it" || results.word === "I" || results.word === "you" || results.word === "my" || results.word === "for" || results.word === "and" || results.word === "or" || results.word === "me" || results.word === "your" || results.word === "but" || results.word === "so" || results.word === "that" || results.word === "in" || results.word === "on" || results.word === "as" || results.word === "of" || results.word === "by" || results.word === "was" || results.word === "had" || results.word === "from" || results.word === "will" || results.word === "can" || results.word === "would" || results.word === "this" || results.word === "all" || results.word === "only" || results.word === "out" || results.word === "with" || results.word === "which" || results.word === "went" || results.word === "did" || results.word === "then" || results.word === "like"){
+                        results.word = null
+                    } else {
+                        return results.word;
+                    }
+                })
                 
                 const newState = []
                 
                 //creates our own array so you don't have to filter through all the json results
-                wordResults.map( (results) => {
+                filteredWordResults.map( (results) => {
                     return newState.push({
                     word: results.word,
                     })
@@ -87,17 +121,22 @@ class Search extends Component {
                     <button type="submit" >Search</button>
                 </form>
 
+                <div id="dropBox" onDrop={this.drop} onDragOver={this.allowDrop} onDragStart={this.drag}>
 
-                <ul>
+                <ul >
                     {
                         this.state.chosenWord.map((results, index ) => {
                         return (
-                            <li key={index}>{results.word}</li>
+                            <li  id={index} onDragStart={this.drag}  draggable="true" key={index}>{results.word}</li>
                                    
                         )
                         })
                     }
                 </ul>
+            
+                </div>
+                <br/>
+                <div id="dropBox" onDrop={this.drop} onDragOver={this.allowDrop} onDragStart={this.drag}></div>
             </>
             
         )
