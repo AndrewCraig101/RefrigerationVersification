@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { Component } from 'react';
+import firebase from './firebase';
 
 
  //you have to call it like this when creating a constructor because thems the rules 
@@ -18,25 +19,14 @@ class Search extends Component {
             chosenWord: [],
         }
     }
-    // function allowDrop(ev) {
-    //     ev.preventDefault();
-    // }
-    // function drag(ev) {
-    //     ev.dataTransfer.setData(“text”, ev.target.id);
-    // }
-    // function drop(ev) {
-    //     ev.preventDefault();
-    //     var data = ev.dataTransfer.getData(“text”);
-    //     ev.target.appendChild(document.getElementById(data));
-    // }
-
+  
     //this function allows us to grab the value from the input without hitting the submit value
 
     handleChange = (e) => {
         this.setState({
             userSearch: e.target.value
         })
-        console.log(e.target.value)
+        console.log(e.target)
     }
 
 
@@ -65,6 +55,26 @@ class Search extends Component {
         
        
     }
+
+    poemSubmit = (e) => {
+		e.preventDefault();
+		const databaseRef = firebase.database().ref();
+        this.textInput()
+        this.setState ({
+            textInput: ""
+        })
+		databaseRef.push(this.textInput);
+		
+	}
+
+    createPoem = (e) => {
+        this.setState({
+            textinput: e.target.value
+        })
+        
+		
+	}
+
 
     // this function allows us to only call api on user search
     userSearch = () => {
@@ -139,11 +149,15 @@ class Search extends Component {
                 </div>
                 <br/>
                 <h2>Function and Suffixes</h2>
-                <div class="dropBox suffixArea" onDrop={this.drop} onDragOver={this.allowDrop} onDragStart={this.drag}></div>
+                <div class="dropBox suffixArea" onDragOver={this.allowDrop} onDragStart={this.drag}></div>
 
                 <br/>
                 <h2>Poem Area</h2>
-                <div class="dropBox poemArea" onDrop={this.drop} onDragOver={this.allowDrop} onDragStart={this.drag}></div>
+                <form onSubmit={this.poemSubmit}>
+                <button>Submit</button>
+                <div onChange={this.createPoem} class="dropBox poemArea" onDrop={this.drop} onDragOver={this.allowDrop} onDragStart={this.drag} value={this.state.textInput}>
+                </div>
+                </form>
             </>
             
         )

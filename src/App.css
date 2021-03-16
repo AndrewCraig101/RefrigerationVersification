@@ -36,6 +36,7 @@ img {
   height: 400px;
   padding: 10px;
   border: 1px solid #AAAAAA;
+  display: flex;
 
 }
 
