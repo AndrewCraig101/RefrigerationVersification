@@ -121,7 +121,9 @@ class Search extends Component {
                     <button type="submit" >Search</button>
                 </form>
 
-                <div id="dropBox" onDrop={this.drop} onDragOver={this.allowDrop} onDragStart={this.drag}>
+                <h2>Results</h2>
+                <div class="dropBox resultsArea" onDrop={this.drop} onDragOver={this.allowDrop} onDragStart={this.drag}>
+                    
 
                 <ul >
                     {
@@ -136,7 +138,12 @@ class Search extends Component {
             
                 </div>
                 <br/>
-                <div id="dropBox" onDrop={this.drop} onDragOver={this.allowDrop} onDragStart={this.drag}></div>
+                <h2>Function and Suffixes</h2>
+                <div class="dropBox suffixArea" onDrop={this.drop} onDragOver={this.allowDrop} onDragStart={this.drag}></div>
+
+                <br/>
+                <h2>Poem Area</h2>
+                <div class="dropBox poemArea" onDrop={this.drop} onDragOver={this.allowDrop} onDragStart={this.drag}></div>
             </>
             
         )
