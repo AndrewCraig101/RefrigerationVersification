@@ -77,7 +77,7 @@ class Search extends Component {
                 topics: this.state.userSearch,
                 rel_bga: this.state.userSearch,
                 format: "JSON",
-                max: 50,
+                max: 10,
             },
         }).then((res) => {
             console.log(res)
@@ -117,10 +117,12 @@ class Search extends Component {
 
     render() {
         const constantWords = [
-            "who", "what", "when", "where", "why", "how", "the", "a", "is", "he", "his", "she", "her", "hers", "they", "them", "their", "there", "are", "it", "I", "you", "my", "for", "and", "or", "me", "your", "but", "so", "that", "in", "on", "as", "of", "by", "was", "had", "from", "will", "can", "would", "this", "all", "only", "out", "with", "which", "went", "did", "then", "like"
+        {word: "who", id: "who"} , {word: "what", id: "what"} , {word: "when", id: "when"} , {word: "where", id: "where"} , {word: "why", id: "why"} , {word: "how", id: "how"} , {word: "the", id: "the"} , {word: "a", id: "a"} , {word: "is", id: "is"} , {word: "he", id: "he"} , {word: "his", id: "his"} , {word: "she", id: "she"} ,
+        {word: "her", id: "her"} , {word: "hers", id: "hers"} , {word: "they", id: "they"} , {word: "them", id: "them"} , {word: "their", id: "their"} , {word: "there", id: "there"} , {word: "are", id: "are"} , {word: "it", id: "it"} , {word: "I", id: "I"} , {word: "you", id: "you"} , {word: "my", id: "my"} , {word: "for", id: "for"} , {word: "and", id: "and"} , {word: "or", id: "or"} , {word: "me", id: "me"} , {word: "your", id: "your"} , {word: "but", id: "but"} , {word: "or", id: "or"} , {word: "that", id: "that"} ,
+        {word: "in", id: "in"} , {word: "on", id: "on"} , {word: "as", id: "as"} , {word: "of", id: "of"} , {word: "by", id: "by"} , {word: "was", id: "was"} , {word: "had", id: "had"} , {word: "from", id: "from"} , {word: "will", id: "will"} , {word: "can", id: "can"} , {word: "would", id: "would"}, {word: "this", id: "this"} , {word: "all", id: "all"} , {word: "only", id: "only"} , {word: "out", id: "out"} , {word: "with", id: "with"} , {word: "which", id: "which"} , {word: "went", id: "went"} , {word: "did" , id: "did"} , {word: "then", id: "then"} , {word: "like", id: "like"}
         ]
         const constantPunctuation = [
-            ".", ",", ":", "!", "?"
+            {word: ".", id: "period"} , {word: ",", id: "comma"} , {word: ":", id: "colon"} , {word: "!", id: "exclamation"} , {word: "?", id: "question"}
         ]
         return (
             <>
@@ -149,12 +151,12 @@ class Search extends Component {
                 </div>
                 <br />
                 <h2>Function and Suffixes</h2>
-                <div className="dropBox suffixArea" onDrop={this.drop} onDragOver={this.allowDrop} onDragStart={this.drag}>
+                <div className="dropBox suffixArea" onDrop={this.drop} onDragStart={this.drag}>
                     <ul>
                         {
                             constantWords.map((word, index) => {
                                 return (
-                                    <li key={index}>{word}</li>
+                                    <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}</li>
                                 )
                             })
                         }
@@ -163,7 +165,7 @@ class Search extends Component {
                         {
                             constantPunctuation.map((word, index) => {
                                 return (
-                                    <li key={index}>{word}</li>
+                                    <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}</li>
                                 )
                             })
                         }
@@ -172,7 +174,11 @@ class Search extends Component {
 
                 <br />
                 <h2>Poem Area</h2>
+                <form action="">
                 <div className="dropBox poemArea" onDrop={this.drop} onDragOver={this.allowDrop} onDragStart={this.drag}></div>
+                <button>CLICK</button>
+
+                </form>
             </>
 
         )
