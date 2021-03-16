@@ -61,7 +61,9 @@ const Poem = () => {
     }
 
 	const handleClick = (event) => {
+		const testBox = document.getElementsByClassName('testBox')
 		console.log(event)
+		console.log(event.target.textContent)
 	}
 
 
@@ -71,10 +73,9 @@ const Poem = () => {
 		<div>
 			<form onSubmit={handleSubmit}>
 				<label htmlFor="leavePoem">Displaying All Comments</label>
-				<div type="text" className="dropBox resultsArea" onDrop={drop} onDragOver={allowDrop} onDragStart={drag} onChange={handleChange} value={finalPoem} name="leavePoem" onClick={handleClick}>
-					{/* <textarea placeholder="Leave me a comment!" type="text" name="leavePoem" id="leavePoem" cols="30" rows="10" maxLength="200" required ></textarea> */}
+				<div id="leavePoem" className="dropBox resultsArea" draggable="true" onDrop={drop} onDragOver={allowDrop} onDragStart={drag} onClick={handleClick}>
 				</div>
-					<button className="addButton" onClick={handleClick}>Add Comment</button>
+				<button className="addButton" >Add Comment</button>
 			</form>
 			<ul>
 				{
