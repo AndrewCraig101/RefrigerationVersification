@@ -2,7 +2,6 @@ import axios from 'axios';
 import { Component } from 'react';
 import firebase from './firebase';
 
-
 //you have to call it like this when creating a constructor because thems the rules 
 class Search extends Component {
 
@@ -123,13 +122,21 @@ class Search extends Component {
 
 
     render() {
+
+        
         const constantWords = [
             { word: "who", id: "who" }, { word: "what", id: "what" }, { word: "when", id: "when" }, { word: "where", id: "where" }, { word: "why", id: "why" }, { word: "how", id: "how" }, { word: "the", id: "the" }, { word: "a", id: "a" }, { word: "is", id: "is" }, { word: "he", id: "he" }, { word: "his", id: "his" }, { word: "she", id: "she" },
-            { word: "her", id: "her" }, { word: "hers", id: "hers" }, { word: "they", id: "they" }, { word: "them", id: "them" }, { word: "their", id: "their" }, { word: "there", id: "there" }, { word: "are", id: "are" }, { word: "it", id: "it" }, { word: "I", id: "I" }, { word: "you", id: "you" }, { word: "my", id: "my" }, { word: "for", id: "for" }, { word: "and", id: "and" }, { word: "or", id: "or" }, { word: "me", id: "me" }, { word: "your", id: "your" }, { word: "but", id: "but" }, { word: "or", id: "or" }, { word: "that", id: "that" }, { word: "in", id: "in" }, { word: "on", id: "on" }, { word: "as", id: "as" }, { word: "of", id: "of" }, { word: "by", id: "by" }, { word: "was", id: "was" }, { word: "had", id: "had" }, { word: "from", id: "from" }, { word: "will", id: "will" }, { word: "can", id: "can" }, { word: "would", id: "would" }, { word: "this", id: "this" }, { word: "all", id: "all" }, { word: "only", id: "only" }, { word: "out", id: "out" }, { word: "with", id: "with" }, { word: "which", id: "which" }, { word: "went", id: "went" }, { word: "did", id: "did" }, { word: "then", id: "then" }, { word: "like", id: "like" } 
+            { word: "her", id: "her" }, { word: "hers", id: "hers" }, { word: "they", id: "they" }, { word: "them", id: "them" }, { word: "their", id: "their" }, { word: "there", id: "there" }, { word: "are", id: "are" }, { word: "it", id: "it" }, { word: "I", id: "I" }, { word: "you", id: "you" }, { word: "my", id: "my" }, { word: "for", id: "for" }, { word: "and", id: "and" }, { word: "or", id: "or" }, { word: "me", id: "me" }, { word: "your", id: "your" }, { word: "but", id: "but" }, { word: "or", id: "or" }, { word: "that", id: "that" }, { word: "in", id: "in" }, { word: "on", id: "on" }, { word: "as", id: "as" }, { word: "of", id: "of" }, { word: "by", id: "by" }, { word: "was", id: "was" }, { word: "had", id: "had" }, { word: "from", id: "from" }, { word: "will", id: "will" }, { word: "can", id: "can" }, { word: "would", id: "would" }, { word: "this", id: "this" }, { word: "all", id: "all" }, { word: "only", id: "only" }, { word: "out", id: "out" }, { word: "with", id: "with" }, { word: "which", id: "which" }, { word: "went", id: "went" }, { word: "did", id: "did" }, { word: "then", id: "then" }, { word: "like", id: "like" }, { word: "said", id: "said" }, { word: "to", id: "to" }, { word: "lol", id: "lol" }
         ]
         const constantPunctuation = [
-            { word: ".", id: "period" }, { word: ",", id: "comma" }, { word: ":", id: "colon" }, { word: "!", id: "exclamation" }, { word: "?", id: "question" }
+            { word: ".", id: "period" }, { word: ":", id: "colon" }, { word: "!", id: "exclamation" }, { word: "?", id: "question" }, { word: `"`, id: "quoteOne" }, { word: `"`, id: "quoteTwo" }
         ]
+
+
+        const emojis = [
+            { emoji: "🙂", id: "smile" }, { emoji: "😉", id: "wink" }, { emoji: "😍", id: "heartEyes" }, { emoji: "😃", id: "grin" }, { emoji: "😩", id: "weary" }, { emoji: "😠", id: "angry" }, { emoji: "😂", id: "laugh" }, { emoji: "😮", id: "surprise" }, { emoji: "😭", id: "cry" }, { emoji: "😘", id: "winkKiss" }, { emoji: "😗", id: "kiss" }, { emoji: "🤩", id: "starEyes" }, { emoji: "😜", id: "tongueWink" }, { emoji: "😆", id: "grinSquint" }, { emoji: "😬", id: "grimace" }, { emoji: "😦", id: "frownOpen" }, { emoji: "😐", id: "meh" }, { emoji: "😔", id: "sad" }, { emoji: "💕", id: "hearts" }, { emoji: "💔", id: "brokenHeart" }, { emoji: "💩", id: "poop" }, { emoji: "🔥", id: "fire" }, { emoji: "✨", id: "sparkle" }, { emoji: "🌸", id: "flower" }
+        ]
+
         return (
            <section>
 
@@ -180,7 +187,14 @@ class Search extends Component {
                                         )
                                     })
                                 }
-
+                                {
+                                    emojis.map((word, index) => {
+                                        return (
+                                            <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.emoji}</li>
+                                             
+                                        )
+                                    })
+                                }
                             </ul>
 
 
