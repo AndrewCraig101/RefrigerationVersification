@@ -108,6 +108,7 @@ class Search extends Component {
             filteredWordResults.map((results) => {
                 return newState.push({
                     word: results.word,
+                    id: results,
                 })
 
             })
@@ -134,7 +135,7 @@ class Search extends Component {
 
                  <form onSubmit={this.handleSubmit} className="search-bar">
                     <label className="sr-only" htmlFor="search">Search</label>
-                    <input type="text" placeholder="enter word here" id="search" value={this.state.userSearch} onChange={this.handleChange}></input>
+                    <input required type="text" placeholder="enter word here" id="search" value={this.state.userSearch} onChange={this.handleChange}></input>
                     <button type="submit" >Search</button>
                 </form>
 
