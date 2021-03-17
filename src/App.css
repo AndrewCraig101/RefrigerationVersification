@@ -26,17 +26,115 @@ ul {
 } 
 a { 
   display: inline-block; text-decoration: none; 
+  color: white; 
 } 
+a:visited {
+   text-decoration: none; color: white; 
+  }
+a:hover { 
+  text-decoration: none; color: white; 
+}
+a:focus { 
+  text-decoration: none; color: white; 
+}
+a:hover, 
+a:active { 
+  text-decoration: none; color:white; 
+}
 img { 
   max-width: 100% 
 }
+
+/* ******MAIN SECTION******* */
+
+main {
+  background-image: url(./background-image-fridge1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 400;
+  text-transform: lowercase;
+  display: flex;
+}
+
+.logo {
+  width: 300px;
+}
+
+.poems-container {
+  width: 50%;
+}
+
+/* ********SEARCH SECTION******* */
+
+.search-bar {
+  position: absolute;
+  margin: -200px 0 0 350px;
+}
+
+input[type="text"],
+button {
+  border: 4px solid black;
+  padding: 5px 15px;
+  font-size: 2rem;
+  font-family: 'Kanit', sans-serif;
+  text-transform: lowercase;
+}
+
+input[type="text"]:hover,
+input[type="text"]:focus,
+button:hover,
+button:focus{
+  box-shadow:  3px 3px 0 0 #85fb83;
+}
+
+
+input[type="text"]{
+  margin-right: 5px;
+  width: 250px;
+  transform: rotate(-1.8deg);
+}
+
+button{
+  background-color: white;
+  transform: rotate(1.8deg);
+}
+
+/* **********WORDS CONTAINER********** */
+
+.words-container{
+    margin-top: 30px;
+
+}
+
+h2{
+  margin: 0 auto;
+  margin-left: 100px;
+  margin-bottom: 0px;
+  text-transform: lowercase;
+  color: white;
+  text-shadow: 1px 1px #85fb83, 4px 5px #1a4543 ;
+  font-size: 3rem;
+  font-weight: 700;
+
+}
+
+/* **********POEM RESULTS AND SUGGESTIONS********** */
+
 
 .dropBox {
   width: 400px;
   height: 400px;
   padding: 10px;
-  border: 1px solid #AAAAAA;
-
+  border: 8px solid #1a4543;
+  margin: 20px 0 10px 100px;
+  width: 60%;
+  height: 150px;
+  overflow: auto;
+  padding: 6px;
+  background-color: #1a4543; 
+  box-shadow:  4px 4px 0 0 #85fb83, 9px 9px black;
 }
 
 .word {
@@ -46,8 +144,92 @@ img {
 }
 
 li {
-  font-size: 1.5rem;
+    font-size: 1.7rem;
+    margin: 5px;
+    flex-wrap: wrap;
+    display: inline-block;
+    padding: 5px 10px;
+    color: black;
+    border: 3px solid black;
+    background-color: white;
+    text-align: center;
+    transition: 0.8s;
 }
+
+li:nth-of-type(odd) {
+    transform: rotate(1.4deg);
+}
+.rotate {
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+}
+
+li:hover,
+li:focus {
+    box-shadow:  2px 2px 0 0 #85fb83;
+}
+
+
+
+
+/* ********** FRIDGE ********** */
+
+.right-side {
+  width: 850px;
+  margin-left: 96%;
+  margin-right: 100px;
+  margin-top: -650px;
+  border: none;
+  margin-bottom: 50px;
+}
+
+.right-side h2{
+  display: none;
+}
+
+.poemArea{
+  margin-top: 70px;
+  border: none;
+  box-shadow: none;
+  background-color: none;
+}
+
+
+/* *******POST IT NOTE******** */
+.postItNote{
+  position: absolute;
+  margin-left: 450px;
+  margin-right: 100px;
+  margin-top: 38%;
+  max-width: 170px;
+  width: 170px;
+}
+
+
+footer {
+  background-color: #1a4543;
+  padding: 20px 0;
+}
+
+footer p{
+    font-weight: 700;
+    font-family: 'Kanit', sans-serif;
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 1px 1px #85fb83;
+
+}
+
+footer p a {
+  text-decoration: none;
+}
+
+
 
 
 

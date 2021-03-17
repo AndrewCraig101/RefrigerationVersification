@@ -126,28 +126,20 @@ class Search extends Component {
         ]
         return (
             <>
-
-                <form onSubmit={this.handleSubmit}>
+        
+                <form onSubmit= {this.handleSubmit} className="search-bar">
                     <label className="sr-only" htmlFor="search">Search</label>
                     <input type="text" placeholder="enter word here" id="search" value={this.state.userSearch} onChange={this.handleChange}></input>
                     <button type="submit" >Search</button>
                 </form>
 
-                <h2>Results</h2>
-                <div className="dropBox resultsArea" onDrop={this.drop} onDragOver={this.allowDrop} onDragStart={this.drag}>
+                <div className="words-container">
+                    <div className="left-side">
+                        <h2>Results</h2>
+                        <div class="dropBox resultsArea" onDrop={this.drop} onDragOver={this.allowDrop} onDragStart={this.drag}>
+                            
 
-
-                    <ul >
-                        {
-                            this.state.chosenWord.map((results, index) => {
-                                return (
-                                    <li id={index} onDragStart={this.drag} draggable="true" key={index}>{results.word}</li>
-
-                                )
-                            })
-                        }
-                    </ul>
-
+<<<<<<< HEAD
                 </div>
                 <br />
                 <h2>Function and Suffixes</h2>
@@ -179,6 +171,33 @@ class Search extends Component {
                 <button>CLICK</button>
 
                 </form>
+=======
+                        <ul >
+                            {
+                                this.state.chosenWord.map((results, index ) => {
+                                return (
+                                    <li  id={index} onDragStart={this.drag}  draggable="true" key={index}>{results.word}</li>
+                                        
+                                )
+                                })
+                            }
+                        </ul>
+                    
+                        </div>
+                        <br/>
+                        <h2>Function and Suffixes</h2>
+                        <div class="dropBox suffixArea" onDrop={this.drop} onDragOver={this.allowDrop} onDragStart={this.drag}></div>
+                    </div>
+
+                    <br/>
+                    <div className="right-side">
+                        <h2>Poem Area</h2>
+                        <div class="dropBox poemArea" onDrop={this.drop} onDragOver={this.allowDrop} onDragStart={this.drag}></div>
+                    </div>
+                </div>
+
+
+>>>>>>> 52d74ff92bb1252fae89ed624aab93932ea17ee5
             </>
 
         )
