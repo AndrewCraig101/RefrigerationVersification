@@ -10,9 +10,10 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 function FirebasePoems () {
     return (
         <body className="firebase">
-            <main className="firebase-container">  <Link to="/">
+            <main className="firebase-container">  
+            <Link to="/">
                 <Logo />
-            </Link>
+             </Link>
                 <h1 className="firebaseTitle">Past Poems</h1>
                 <section className="past-poems-container">
                     <div className="imageContainer">

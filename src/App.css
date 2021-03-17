@@ -62,7 +62,7 @@ img {
   margin: 0 auto;
   left: 85%;
   right: 0%;
-  margin-top: -64%;
+  margin-top: -65%;
 }
 
 .fridgeImageMain {
@@ -80,7 +80,8 @@ main {
 }
 
 .logo {
-  width: 300px;
+  margin-top: -15%;
+  width: 350px;
 }
 
 .poems-container {
@@ -91,7 +92,7 @@ main {
 
 .search-bar {
   position: absolute;
-  margin: -200px 0 0 350px;
+  margin: -300px 0 0 350px;
 }
 
 input[type="text"],
@@ -129,8 +130,7 @@ button{
 /* **********WORDS CONTAINER********** */
 
 .words-container{
-    margin-top: 30px;
-
+    margin-top: -40px;
 }
 
 h2{
@@ -153,7 +153,7 @@ h2{
   height: 400px;
   padding: 10px;
   border: 8px solid #1a4543;
-  margin: 20px 0 10px 100px;
+  margin: 5px 0 10px 100px;
   width: 60%;
   height: 150px;
   overflow: auto;
@@ -216,7 +216,7 @@ li:focus {
 }
 
 .poemArea{
-  margin-top: 210px;
+  margin-top: 180px;
   border: none;
   box-shadow: none;
   background-color: none;
@@ -225,9 +225,6 @@ li:focus {
   height: 150px;
   overflow: auto;
 }
-
-
-/* *******POST IT NOTE******** */
 
 
 /* footer {
