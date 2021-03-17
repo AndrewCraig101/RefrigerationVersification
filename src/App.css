@@ -47,15 +47,18 @@ img {
 
 /* ******MAIN SECTION******* */
 
-main {
+.App {
   background-image: url(./background-image-fridge1.png);
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
+}
+
+main {
   font-family: 'Kanit', sans-serif;
   font-weight: 400;
   text-transform: lowercase;
-  display: flex;
+  /* display: flex; */
 }
 
 .logo {
@@ -228,6 +231,24 @@ footer p{
 footer p a {
   text-decoration: none;
 }
+
+
+
+
+
+
+
+/* **********FIREBASE PAGE********** */
+
+
+.firebase {
+  background-image: none;
+  background-color: red;
+  height: 100vh;
+}
+
+
+
 
 
 

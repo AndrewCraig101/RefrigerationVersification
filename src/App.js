@@ -3,6 +3,10 @@ import Search from './Search';
 import Logo from './Logo';
 import PostItNote from './PostItNote';
 import Footer from './Footer';
+import HomePage from './HomePage'
+import FirebasePoems from './FirebasePoems';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+
 
 
 
@@ -10,24 +14,15 @@ import Footer from './Footer';
 function App() {
 
   return (
-    <body>
-      <main className="refrigeration-versification">
-        <section className="poems-container">
-          <Logo />
-          <div className="poems-content">
-            {/* <Poem /> */}
-
-            <Search />
-          </div>
-        </section>
-        <section className="fridge-container">
-          <div className="fridge-content">
-            <PostItNote />
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </body>
+    <Router basename={process.env.PUBLIC_URL}>
+      <div className="app-container">
+        <div className="App">
+          <Route path="/" exact component={HomePage} />
+        <Route path="/pastpoems" component={FirebasePoems} />
+        </div>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
