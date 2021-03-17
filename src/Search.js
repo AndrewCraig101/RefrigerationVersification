@@ -129,10 +129,34 @@ class Search extends Component {
     render() {
 
         
-        const constantWords = [
-            { word: "who", id: "who" }, { word: "what", id: "what" }, { word: "when", id: "when" }, { word: "where", id: "where" }, { word: "why", id: "why" }, { word: "how", id: "how" }, { word: "the", id: "the" }, { word: "a", id: "a" }, { word: "is", id: "is" }, { word: "he", id: "he" }, { word: "his", id: "his" }, { word: "she", id: "she" },
-            { word: "her", id: "her" }, { word: "hers", id: "hers" }, { word: "they", id: "they" }, { word: "them", id: "them" }, { word: "their", id: "their" }, { word: "there", id: "there" }, { word: "are", id: "are" }, { word: "it", id: "it" }, { word: "I", id: "I" }, { word: "you", id: "you" }, { word: "my", id: "my" }, { word: "for", id: "for" }, { word: "and", id: "and" }, { word: "or", id: "or" }, { word: "me", id: "me" }, { word: "your", id: "your" }, { word: "but", id: "but" }, { word: "or", id: "or" }, { word: "that", id: "that" }, { word: "in", id: "in" }, { word: "on", id: "on" }, { word: "as", id: "as" }, { word: "of", id: "of" }, { word: "by", id: "by" }, { word: "was", id: "was" }, { word: "had", id: "had" }, { word: "from", id: "from" }, { word: "will", id: "will" }, { word: "can", id: "can" }, { word: "would", id: "would" }, { word: "this", id: "this" }, { word: "all", id: "all" }, { word: "only", id: "only" }, { word: "out", id: "out" }, { word: "with", id: "with" }, { word: "which", id: "which" }, { word: "went", id: "went" }, { word: "did", id: "did" }, { word: "then", id: "then" }, { word: "like", id: "like" }, { word: "said", id: "said" }, { word: "to", id: "to" }, { word: "lol", id: "lol" }
+
+        const questionWords = [
+            { word: "who", id: "who" }, { word: "what", id: "what" }, { word: "when", id: "when" }, { word: "where", id: "where" }, { word: "why", id: "why" }, { word: "how", id: "how" }
         ]
+
+        const pronouns = [
+            { word: "I", id: "I" }, { word: "he", id: "he" }, { word: "his", id: "his" }, { word: "she", id: "she" },
+            { word: "her", id: "her" }, { word: "hers", id: "hers" }, { word: "they", id: "they" }, { word: "them", id: "them" }, { word: "their", id: "their" }, { word: "there", id: "there" }, { word: "this", id: "this" }, { word: "you", id: "you" }, { word: "your", id: "your" }, { word: "me", id: "me" }, { word: "we", id: "we" }, { word: "it", id: "it" },
+        ]
+
+        const articleWords = [
+            { word: "the", id: "the" }, { word: "a", id: "a" }, { word: "an", id: "an" },
+        ]
+
+        const conjunction = [
+            { word: "and", id: "and" }, { word: "or", id: "or" }, { word: "that", id: "that" },
+        ]
+
+        const verbs = [
+            { word: "are", id: "are" }, { word: "is", id: "is" }, { word: "was", id: "was" }, { word: "had", id: "had" }, { word: "will", id: "will" }, { word: "can", id: "can" }, { word: "would", id: "would" }, { word: "went", id: "went" }, { word: "did", id: "did" }, { word: "said", id: "said" },
+        ]
+
+        const preposition = [
+            { word: "for", id: "for" }, { word: "but", id: "but" }, { word: "in", id: "in" }, { word: "on", id: "on" }, { word: "as", id: "as" }, { word: "of", id: "of" }, { word: "by", id: "by" }, { word: "from", id: "from" }, { word: "out", id: "out" }, { word: "with", id: "with" }, { word: "like", id: "like" }, { word: "to", id: "to" },
+        ]
+
+
+
         const constantPunctuation = [
             { word: ".", id: "period" }, { word: ":", id: "colon" }, { word: "!", id: "exclamation" }, { word: "?", id: "question" }, { word: `"`, id: "quoteOne" }, { word: `"`, id: "quoteTwo" }
         ]
@@ -175,16 +199,58 @@ class Search extends Component {
                
                 
                         <br />
-                        <h2>Function and Suffixes</h2>
+                        <h2>Helpful Words</h2>
                         <div class="dropBox suffixArea" onDrop={this.drop} onDragStart={this.drag}>
                             <ul>
+                                <h3>Questions</h3>
                                 {
-                                    constantWords.map((word, index) => {
+                                    questionWords.map((word, index) => {
                                         return (
                                             <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}&nbsp; </li>
                                         )
                                     })
                                 }
+                                <h3>Pronouns</h3>
+                                {
+                                    pronouns.map((word, index) => {
+                                        return (
+                                            <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}&nbsp; </li>
+                                        )
+                                    })
+                                }
+                                <h3>Articles</h3>
+                                {
+                                    articleWords.map((word, index) => {
+                                        return (
+                                            <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}&nbsp; </li>
+                                        )
+                                    })
+                                }
+                                <h3>Conjunctions</h3>
+                                {
+                                    conjunction.map((word, index) => {
+                                        return (
+                                            <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}&nbsp; </li>
+                                        )
+                                    })
+                                }
+                                <h3>Verbs</h3>
+                                {
+                                    verbs.map((word, index) => {
+                                        return (
+                                            <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}&nbsp; </li>
+                                        )
+                                    })
+                                }
+                                <h3>Prepositions</h3>
+                                {
+                                    preposition.map((word, index) => {
+                                        return (
+                                            <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}&nbsp; </li>
+                                        )
+                                    })
+                                }
+                                    <h3>Punctuation</h3>
                                 {
                                     constantPunctuation.map((word, index) => {
                                         return (
@@ -192,6 +258,7 @@ class Search extends Component {
                                         )
                                     })
                                 }
+                                    <h3>Emoji</h3>
                                 {
                                     emojis.map((word, index) => {
                                         return (
