@@ -51,33 +51,32 @@ img {
   background-image: url(./darkwaves.png);
   background-size: cover;
   background-repeat: no-repeat;  
-  height: 150vh;
-  overflow-y: hidden;
+  height: 100vh;
   display: flex;
+  overflow-y: hidden;
 }
 
 .imageContainerMain{
-  position: absolute;
-  width: 60%;
+  position: relative;
+  width: 110%;
   margin: 0 auto;
+  left: 85%;
   right: 0%;
-  top: 20%;
+  margin-top: -64%;
 }
 
 .fridgeImageMain {
   position: relative;
   z-index: 1;
-  width: 80%;
+  width: 90%;
   margin-left: 7%;
-  opacity: 0.5;
-
+  overflow-y: hidden;
 }
 
 main {
   font-family: 'Kanit', sans-serif;
   font-weight: 400;
   text-transform: lowercase;
-  /* display: flex; */
 }
 
 .logo {
@@ -109,6 +108,8 @@ input[type="text"]:focus,
 button:hover,
 button:focus{
   box-shadow:  3px 3px 0 0 #85fb83;
+  z-index: 8;
+
 }
 
 
@@ -119,8 +120,10 @@ input[type="text"]{
 }
 
 button{
+  position: relative;
   background-color: white;
   transform: rotate(1.8deg);
+  z-index: 8;
 }
 
 /* **********WORDS CONTAINER********** */
@@ -155,8 +158,8 @@ h2{
   height: 150px;
   overflow: auto;
   padding: 6px;
-  background-color: #1a4543; 
-  box-shadow:  4px 4px 0 0 #85fb83, 9px 9px black;
+  z-index: 5;
+  /* box-shadow:  4px 4px 0 0 #85fb83, 9px 9px black; */
 }
 
 .word {
@@ -200,8 +203,8 @@ li:focus {
 /* ********** FRIDGE ********** */
 
 .right-side {
-  width: 850px;
-  margin-left: 96%;
+  width: 100%;
+  margin-left: 98%;
   margin-right: 100px;
   margin-top: -650px;
   border: none;
@@ -213,25 +216,21 @@ li:focus {
 }
 
 .poemArea{
-  margin-top: 70px;
+  margin-top: 210px;
   border: none;
   box-shadow: none;
   background-color: none;
+  z-index: 7;
+  position: relative;
+  height: 150px;
+  overflow: auto;
 }
 
 
 /* *******POST IT NOTE******** */
-.postItNote{
-  position: absolute;
-  margin-left: 450px;
-  margin-right: 100px;
-  margin-top: 38%;
-  max-width: 170px;
-  width: 170px;
-}
 
 
-footer {
+/* footer {
   background-color: #1a4543;
   padding: 20px 0;
 }
@@ -249,11 +248,7 @@ footer p{
 
 footer p a {
   text-decoration: none;
-}
-
-
-
-
+} */
 
 
 

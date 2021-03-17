@@ -18,7 +18,7 @@ function HomePage() {
                     <Search />
                 </div>
                     <div className="imageContainerMain">
-                    <img src="./assets/fridge.png" className="fridgeImageMain" alt="" />
+                    <img src="./assets/fridgemain.png" className="fridgeImageMain" alt="" />
                     </div>
             </section>
         </main>
