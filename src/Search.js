@@ -146,46 +146,6 @@ class Search extends Component {
                     <div className="left-side">
                         <h2>Results</h2>
                         <div class="dropBox resultsArea" onDrop={this.drop} onDragOver={this.allowDrop} onDragStart={this.drag}>
-<<<<<<< HEAD
-                            
-
-                        <ul >
-                            {
-                                this.state.chosenWord.map((results, index ) => {
-                                return (
-                                    <li  id={index} onDragStart={this.drag}  draggable="true" key={index}>{results.word}</li>
-                                        
-                                )
-                                })
-                            }
-                        </ul>
-                    
-<<<<<<< HEAD
-
-                <ul >
-                    {
-                        this.state.chosenWord.map((results, index ) => {
-                        return (
-                            <li  id={index} onDragStart={this.drag}  draggable="true"  key={index}>{results.word}</li>
-                                   
-                        )
-                        })
-                    }
-                </ul>
-            
-                </div>
-                <br/>
-                <h2>Function and Suffixes</h2>
-                <div class="dropBox suffixArea" onDragOver={this.allowDrop} onDragStart={this.drag}></div>
-
-                <br/>
-                <h2>Poem Area</h2>
-                <div  class="dropBox poemArea" onDrop={this.drop} onDragOver={this.allowDrop} onDragStart={this.drag} >
-                </div>
-                <button onClick={this.savePoemToFireBase}>Save Poem</button>
-                
-=======
-=======
 
 
                             <ul >
@@ -199,7 +159,6 @@ class Search extends Component {
                                 }
                             </ul>
 
->>>>>>> static-choice-words
                         </div>
                         <br />
                         <h2>Function and Suffixes</h2>
@@ -232,9 +191,6 @@ class Search extends Component {
                         <div class="dropBox poemArea" onDrop={this.drop} onDragOver={this.allowDrop} onDragStart={this.drag}></div>
                     </div>
                 </div>
-
-
->>>>>>> 52d74ff92bb1252fae89ed624aab93932ea17ee5
             </>
 
         )
