@@ -117,17 +117,17 @@ class Search extends Component {
 
     render() {
         const constantWords = [
-        {word: "who", id: "who"} , {word: "what", id: "what"} , {word: "when", id: "when"} , {word: "where", id: "where"} , {word: "why", id: "why"} , {word: "how", id: "how"} , {word: "the", id: "the"} , {word: "a", id: "a"} , {word: "is", id: "is"} , {word: "he", id: "he"} , {word: "his", id: "his"} , {word: "she", id: "she"} ,
-        {word: "her", id: "her"} , {word: "hers", id: "hers"} , {word: "they", id: "they"} , {word: "them", id: "them"} , {word: "their", id: "their"} , {word: "there", id: "there"} , {word: "are", id: "are"} , {word: "it", id: "it"} , {word: "I", id: "I"} , {word: "you", id: "you"} , {word: "my", id: "my"} , {word: "for", id: "for"} , {word: "and", id: "and"} , {word: "or", id: "or"} , {word: "me", id: "me"} , {word: "your", id: "your"} , {word: "but", id: "but"} , {word: "or", id: "or"} , {word: "that", id: "that"} ,
-        {word: "in", id: "in"} , {word: "on", id: "on"} , {word: "as", id: "as"} , {word: "of", id: "of"} , {word: "by", id: "by"} , {word: "was", id: "was"} , {word: "had", id: "had"} , {word: "from", id: "from"} , {word: "will", id: "will"} , {word: "can", id: "can"} , {word: "would", id: "would"}, {word: "this", id: "this"} , {word: "all", id: "all"} , {word: "only", id: "only"} , {word: "out", id: "out"} , {word: "with", id: "with"} , {word: "which", id: "which"} , {word: "went", id: "went"} , {word: "did" , id: "did"} , {word: "then", id: "then"} , {word: "like", id: "like"}
+            { word: "who", id: "who" }, { word: "what", id: "what" }, { word: "when", id: "when" }, { word: "where", id: "where" }, { word: "why", id: "why" }, { word: "how", id: "how" }, { word: "the", id: "the" }, { word: "a", id: "a" }, { word: "is", id: "is" }, { word: "he", id: "he" }, { word: "his", id: "his" }, { word: "she", id: "she" },
+            { word: "her", id: "her" }, { word: "hers", id: "hers" }, { word: "they", id: "they" }, { word: "them", id: "them" }, { word: "their", id: "their" }, { word: "there", id: "there" }, { word: "are", id: "are" }, { word: "it", id: "it" }, { word: "I", id: "I" }, { word: "you", id: "you" }, { word: "my", id: "my" }, { word: "for", id: "for" }, { word: "and", id: "and" }, { word: "or", id: "or" }, { word: "me", id: "me" }, { word: "your", id: "your" }, { word: "but", id: "but" }, { word: "or", id: "or" }, { word: "that", id: "that" },
+            { word: "in", id: "in" }, { word: "on", id: "on" }, { word: "as", id: "as" }, { word: "of", id: "of" }, { word: "by", id: "by" }, { word: "was", id: "was" }, { word: "had", id: "had" }, { word: "from", id: "from" }, { word: "will", id: "will" }, { word: "can", id: "can" }, { word: "would", id: "would" }, { word: "this", id: "this" }, { word: "all", id: "all" }, { word: "only", id: "only" }, { word: "out", id: "out" }, { word: "with", id: "with" }, { word: "which", id: "which" }, { word: "went", id: "went" }, { word: "did", id: "did" }, { word: "then", id: "then" }, { word: "like", id: "like" }
         ]
         const constantPunctuation = [
-            {word: ".", id: "period"} , {word: ",", id: "comma"} , {word: ":", id: "colon"} , {word: "!", id: "exclamation"} , {word: "?", id: "question"}
+            { word: ".", id: "period" }, { word: ",", id: "comma" }, { word: ":", id: "colon" }, { word: "!", id: "exclamation" }, { word: "?", id: "question" }
         ]
         return (
             <>
-        
-                <form onSubmit= {this.handleSubmit} className="search-bar">
+
+                <form onSubmit={this.handleSubmit} className="search-bar">
                     <label className="sr-only" htmlFor="search">Search</label>
                     <input type="text" placeholder="enter word here" id="search" value={this.state.userSearch} onChange={this.handleChange}></input>
                     <button type="submit" >Search</button>
@@ -137,59 +137,46 @@ class Search extends Component {
                     <div className="left-side">
                         <h2>Results</h2>
                         <div class="dropBox resultsArea" onDrop={this.drop} onDragOver={this.allowDrop} onDragStart={this.drag}>
-                            
 
-<<<<<<< HEAD
-                </div>
-                <br />
-                <h2>Function and Suffixes</h2>
-                <div className="dropBox suffixArea" onDrop={this.drop} onDragStart={this.drag}>
-                    <ul>
-                        {
-                            constantWords.map((word, index) => {
-                                return (
-                                    <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}</li>
-                                )
-                            })
-                        }
-                    </ul>
-                    <ul>
-                        {
-                            constantPunctuation.map((word, index) => {
-                                return (
-                                    <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}</li>
-                                )
-                            })
-                        }
-                    </ul>
-                </div>
 
-                <br />
-                <h2>Poem Area</h2>
-                <form action="">
-                <div className="dropBox poemArea" onDrop={this.drop} onDragOver={this.allowDrop} onDragStart={this.drag}></div>
-                <button>CLICK</button>
+                            <ul >
+                                {
+                                    this.state.chosenWord.map((results, index) => {
+                                        return (
+                                            <li id={index} onDragStart={this.drag} draggable="true" key={index}>{results.word}</li>
 
-                </form>
-=======
-                        <ul >
-                            {
-                                this.state.chosenWord.map((results, index ) => {
-                                return (
-                                    <li  id={index} onDragStart={this.drag}  draggable="true" key={index}>{results.word}</li>
-                                        
-                                )
-                                })
-                            }
-                        </ul>
-                    
+                                        )
+                                    })
+                                }
+                            </ul>
+
                         </div>
-                        <br/>
+                        <br />
                         <h2>Function and Suffixes</h2>
-                        <div class="dropBox suffixArea" onDrop={this.drop} onDragOver={this.allowDrop} onDragStart={this.drag}></div>
+                        <div class="dropBox suffixArea" onDrop={this.drop} onDragStart={this.drag}>
+                            <ul>
+                                {
+                                    constantWords.map((word, index) => {
+                                        return (
+                                            <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}</li>
+                                        )
+                                    })
+                                }
+                                {
+                                    constantPunctuation.map((word, index) => {
+                                        return (
+                                            <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}</li>
+                                        )
+                                    })
+                                }
+
+                            </ul>
+
+
+                        </div>
                     </div>
 
-                    <br/>
+                    <br />
                     <div className="right-side">
                         <h2>Poem Area</h2>
                         <div class="dropBox poemArea" onDrop={this.drop} onDragOver={this.allowDrop} onDragStart={this.drag}></div>
@@ -197,7 +184,6 @@ class Search extends Component {
                 </div>
 
 
->>>>>>> 52d74ff92bb1252fae89ed624aab93932ea17ee5
             </>
 
         )
