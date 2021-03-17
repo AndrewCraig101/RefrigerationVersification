@@ -1,5 +1,4 @@
 import './App.css';
-import Poem from './Poem';
 import Search from './Search';
 import Logo from './Logo';
 import PostItNote from './PostItNote';

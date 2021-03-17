@@ -6,6 +6,8 @@ const Poem = () => {
 
 	const [allPoems, setAllPoems] = useState([]);
 
+
+
 	useEffect(() => {
 		const dbRef = firebase.database().ref();
 
@@ -28,10 +30,14 @@ const Poem = () => {
 
 	}, []);
 
+	
+
 
 	return (
-		
+
+
 		<div>
+			
 			<ul>
 				{
 					allPoems.map((poem) => {
@@ -44,6 +50,7 @@ const Poem = () => {
 				}
 
 			</ul>
+		
 		</div>
 
 	)
