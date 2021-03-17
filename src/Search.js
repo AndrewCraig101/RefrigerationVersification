@@ -39,6 +39,11 @@ class Search extends Component {
         })
     }
 
+    handleClick = (e) => {
+        const poemArea = document.querySelector(".poemArea");
+        poemArea.innerHTML = "";
+    }
+
     allowDrop = (e) => {
         e.preventDefault();
     }
@@ -142,8 +147,8 @@ class Search extends Component {
 
                  <form onSubmit={this.handleSubmit} className="search-bar">
                     <label className="sr-only" htmlFor="search">Search</label>
-                    <input required type="text" placeholder="enter word here" id="search" value={this.state.userSearch} onChange={this.handleChange}></input>
-                    <button type="submit" >Search</button>
+                    <input required type="text" placeholder="enter word here" id="search" value={this.state.userSearch} onChange={this.handleChange} ></input>
+                    <button type="submit" onClick={this.handleClick}>Search</button>
                 </form>
 
                
