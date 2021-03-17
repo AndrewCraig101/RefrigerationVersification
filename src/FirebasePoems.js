@@ -13,12 +13,13 @@ function FirebasePoems () {
             <main className="firebase-container">  <Link to="/">
                 <Logo />
             </Link>
+                <h1 className="firebaseTitle">Past Poems</h1>
                 <section className="past-poems-container">
-                    <div className="past-poems-content">
-                        <Poem />
+                    <div className="imageContainer">
+                        <img src="./assets/fridge.png" className="fridgeImage" alt=""/>
                     </div>
+                    <Poem />
                 </section>
-                <Footer/>
             </main>
         </body>
     )

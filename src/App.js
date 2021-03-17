@@ -20,7 +20,6 @@ function App() {
           <Route path="/" exact component={HomePage} />
         <Route path="/pastpoems" component={FirebasePoems} />
         </div>
-        <Footer />
       </div>
     </Router>
   );

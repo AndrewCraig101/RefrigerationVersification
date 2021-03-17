@@ -2,11 +2,12 @@ import './App.css';
 import Search from './Search';
 import Logo from './Logo';
 import App from './App';
+import Footer from './Footer'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 
 
-function HomePage () {
+function HomePage() {
     return (
         <main className="refrigeration-versification">
             <section className="poems-container">
@@ -14,11 +15,11 @@ function HomePage () {
                     <Logo />
                 </Link>
                 <div className="poems-content">
-                    {/* <Poem /> */}
                     <Search />
                 </div>
             </section>
         </main>
+
     )
 }
 
