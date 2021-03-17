@@ -127,11 +127,6 @@ h2{
   width: 400px;
   height: 400px;
   padding: 10px;
-<<<<<<< HEAD
-  border: 1px solid #AAAAAA;
-  display: flex;
-
-=======
   border: 8px solid #1a4543;
   margin: 20px 0 10px 100px;
   width: 60%;
@@ -140,7 +135,6 @@ h2{
   padding: 6px;
   background-color: #1a4543; 
   box-shadow:  4px 4px 0 0 #85fb83, 9px 9px black;
->>>>>>> 52d74ff92bb1252fae89ed624aab93932ea17ee5
 }
 
 .word {
