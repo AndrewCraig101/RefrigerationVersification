@@ -56,24 +56,23 @@ class Search extends Component {
        
     }
 
-    poemSubmit = (e) => {
-		e.preventDefault();
-		const databaseRef = firebase.database().ref();
-        this.textInput()
-        this.setState ({
-            textInput: ""
-        })
-		databaseRef.push(this.textInput);
-		
-	}
 
-    createPoem = (e) => {
-        this.setState({
-            textinput: e.target.value
-        })
-        
-		
-	}
+    savePoemToFireBase = () => {
+        let poemText = [];
+        const poemArea = document.querySelector(".poemArea");
+        const poemAreaElements = poemArea.getElementsByTagName("li");
+        Array.from(poemAreaElements).forEach(item => {
+            poemText.push(item.innerText)
+        });
+        poemText = poemText.join("");
+        poemArea.innerHTML = "";
+        if (poemText !== "") {
+        const dbRef = firebase.database().ref();
+        dbRef.push(poemText);
+        } else {
+            console.log("poem is blank")
+        }
+    }
 
 
     // this function allows us to only call api on user search
@@ -139,7 +138,7 @@ class Search extends Component {
                     {
                         this.state.chosenWord.map((results, index ) => {
                         return (
-                            <li  id={index} onDragStart={this.drag}  draggable="true" key={index}>{results.word}</li>
+                            <li  id={index} onDragStart={this.drag}  draggable="true"  key={index}>{results.word}</li>
                                    
                         )
                         })
@@ -153,11 +152,10 @@ class Search extends Component {
 
                 <br/>
                 <h2>Poem Area</h2>
-                <form onSubmit={this.poemSubmit}>
-                <button>Submit</button>
-                <div onChange={this.createPoem} class="dropBox poemArea" onDrop={this.drop} onDragOver={this.allowDrop} onDragStart={this.drag} value={this.state.textInput}>
+                <div  class="dropBox poemArea" onDrop={this.drop} onDragOver={this.allowDrop} onDragStart={this.drag} >
                 </div>
-                </form>
+                <button onClick={this.savePoemToFireBase}>Save Poem</button>
+                
             </>
             
         )
