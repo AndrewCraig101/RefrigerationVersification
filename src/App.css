@@ -48,10 +48,29 @@ img {
 /* ******MAIN SECTION******* */
 
 .App {
-  background-image: url(./background-image-fridge1.png);
+  background-image: url(./darkwaves.png);
   background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
+  background-repeat: no-repeat;  
+  height: 150vh;
+  overflow-y: hidden;
+  display: flex;
+}
+
+.imageContainerMain{
+  position: absolute;
+  width: 60%;
+  margin: 0 auto;
+  right: 0%;
+  top: 20%;
+}
+
+.fridgeImageMain {
+  position: relative;
+  z-index: 1;
+  width: 80%;
+  margin-left: 7%;
+  opacity: 0.5;
+
 }
 
 main {

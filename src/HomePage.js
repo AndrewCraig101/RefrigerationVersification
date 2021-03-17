@@ -17,6 +17,9 @@ function HomePage() {
                 <div className="poems-content">
                     <Search />
                 </div>
+                    <div className="imageContainerMain">
+                    <img src="./assets/fridge.png" className="fridgeImageMain" alt="" />
+                    </div>
             </section>
         </main>
 
