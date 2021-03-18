@@ -60,22 +60,22 @@ class Search extends Component {
     }
 
 
-    savePoemToFireBase = () => {
-        let poemText = [];
-        const poemArea = document.querySelector(".poemArea");
-        const poemAreaElements = poemArea.getElementsByTagName("li");
-        Array.from(poemAreaElements).forEach(item => {
-            poemText.push(item.innerText)
-        });
-        poemText = poemText.join("");
-        poemArea.innerHTML = "";
-        if (poemText !== "") {
-        const dbRef = firebase.database().ref();
-        dbRef.push(poemText);
-        } else {
-            console.log("poem is blank")
-        }
-    }
+    // savePoemToFireBase = () => {
+    //     let poemText = [];
+    //     const poemArea = document.querySelector(".poemArea");
+    //     const poemAreaElements = poemArea.getElementsByTagName("li");
+    //     Array.from(poemAreaElements).forEach(item => {
+    //         poemText.push(item.innerText)
+    //     });
+    //     poemText = poemText.join("");
+    //     poemArea.innerHTML = "";
+    //     if (poemText !== "") {
+    //     const dbRef = firebase.database().ref();
+    //     dbRef.push(poemText);
+    //     } else {
+    //         console.log("poem is blank")
+    //     }
+    // }
 
 
     // this function allows us to only call api on user search
@@ -274,11 +274,11 @@ class Search extends Component {
                     </div>
 
                     <br />
-                    <div className="right-side">
+                    {/* <div className="right-side">
                         <h2>Poem Area</h2>
                         <div class="dropBox poemArea" onDrop={this.drop} onDragOver={this.allowDrop} onDragStart={this.drag}></div>
                         <button onClick={this.savePoemToFireBase}>Save Poem</button>
-                    </div>
+                    </div> */}
                 </div>
 
                 </section>
