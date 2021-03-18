@@ -21,6 +21,8 @@ function HomePage() {
                 <div className="poems-content">
                     <Search />
                 </div>
+            </section>
+            <section>
                     <div className="imageContainerMain">
                     <img src="./assets/fridgemain.png" className="fridgeImageMain" alt="" />
                     </div>
