@@ -21,15 +21,15 @@ function HomePage() {
                 </div>
             </section>
             <section className="fridgeContainer">
-                <div className="imageContainerMain">
+                {/* <div className="imageContainerMain">
                     <img src="./assets/fridgemain.png" className="fridgeImageMain" alt="" />
-                </div>
+                </div> */}
                 <SavePoemArea />
+            </section>
                 <Link to="/pastpoems">
                     <PoemsButton />
                 </Link>
                 <JunoButton />
-            </section>
         </main>
 
     )
