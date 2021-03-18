@@ -12,23 +12,23 @@ import SavePoemArea from './SavePoemArea';
 function HomePage() {
     return (
         <main className="refrigeration-versification">
-            <section className="poems-container">
+            <section className="resultsContainer">
                 <Link to="/">
                     <Logo />
-                </Link>
-                <Link to="/pastpoems">
-                    <PoemsButton/>
                 </Link>
                 <div className="poems-content">
                     <Search />
                 </div>
             </section>
-            <section>
-                    <SavePoemArea/>
-                    <div className="imageContainerMain">
+            <section className="fridgeContainer">
+                <div className="imageContainerMain">
                     <img src="./assets/fridgemain.png" className="fridgeImageMain" alt="" />
-                    </div>
-                    <JunoButton />
+                </div>
+                <SavePoemArea />
+                <Link to="/pastpoems">
+                    <PoemsButton />
+                </Link>
+                <JunoButton />
             </section>
         </main>
 

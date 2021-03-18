@@ -60,7 +60,7 @@ class SavePoemArea extends Component {
 			<div className="right-side">
 			<h2>Poem Area</h2>
 			<div class="dropBox poemArea" onDrop={this.drop} onDragOver={this.allowDrop} onDragStart={this.drag}></div>
-			<button onClick={this.savePoemToFireBase}>Save Poem</button>
+			<button className="saveButton" onClick={this.savePoemToFireBase}>Save Poem</button>
 		</div>
 			)
 
