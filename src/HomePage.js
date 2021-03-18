@@ -5,23 +5,14 @@ import App from './App';
 import PoemsButton from './PoemsButton';
 import JunoButton from './JunoButton';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-<<<<<<< HEAD
-// import AutoComplete from './AutoComplete';
-=======
 import SavePoemArea from './SavePoemArea';
->>>>>>> 26618d1f35906794e6d9ae39cd32a5e8878a70a3
 
 
 
 function HomePage() {
     return (
         <main className="refrigeration-versification">
-<<<<<<< HEAD
-            {/* <AutoComplete/> */}
-            <section className="poems-container">
-=======
             <section className="resultsContainer">
->>>>>>> 26618d1f35906794e6d9ae39cd32a5e8878a70a3
                 <Link to="/">
                     <Logo />
                 </Link>

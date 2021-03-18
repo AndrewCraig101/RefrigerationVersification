@@ -212,7 +212,7 @@ class Search extends Component {
                 </form>
 
                
-                <Draggable>
+                
                  <div className="words-container">
                     <div className="left-side">
                         <h2>Results</h2>
@@ -223,7 +223,7 @@ class Search extends Component {
                             {
                                 this.state.chosenWord.map((results, index ) => {
                                 return (
-                                    <li  id={results} onDragStart={this.drag} draggable="true" key={index}>{results.word}&nbsp;</li>
+                                    <li  id={results} onDragStart={this.drag} onTouchStart={this.drag} draggable="true" key={index}>{results.word}&nbsp;</li>
                                         
                                 )
                                 })
@@ -316,7 +316,7 @@ class Search extends Component {
                         <button onClick={this.savePoemToFireBase}>Save Poem</button>
                     </div> */}
                 </div>
-                </Draggable>
+                
                 </section>
 
         )
