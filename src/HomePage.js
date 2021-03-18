@@ -5,12 +5,14 @@ import App from './App';
 import PoemsButton from './PoemsButton';
 import JunoButton from './JunoButton';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+// import AutoComplete from './AutoComplete';
 
 
 
 function HomePage() {
     return (
         <main className="refrigeration-versification">
+            {/* <AutoComplete/> */}
             <section className="poems-container">
                 <Link to="/">
                     <Logo />

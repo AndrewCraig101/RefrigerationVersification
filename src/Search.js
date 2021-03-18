@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { Component } from 'react';
 import firebase from './firebase';
+import Draggable from 'react-draggable';
 
 //you have to call it like this when creating a constructor because thems the rules 
 class Search extends Component {
@@ -18,6 +19,8 @@ class Search extends Component {
             chosenWord: [],
         }
     }
+
+    
   
     //this function allows us to grab the value from the input without hitting the submit value
 
@@ -25,6 +28,40 @@ class Search extends Component {
         this.setState({
             userSearch: e.target.value
         })
+        // this.setState({
+        //     suggestion: " ",
+        // })
+        //  axios({
+        //          url: `https://api.datamuse.com/sug?s=`,
+        //          params: {
+        //            s: this.state.userSearch,
+        //            max: 10,
+        //          }
+        //        }).then(res => {
+        //          // console.log(res)
+        //          setSuggestions(res.data)
+        //            console.log(setSuggestions)
+        //        }).catch((error) => {
+        //         // Error
+        //         if (error.response) {
+        //             // The request was made and the server responded with a status code
+        //             // that falls out of the range of 2xx
+        //             // console.log(error.response.data);
+        //             // console.log(error.response.status);
+        //             // console.log(error.response.headers);
+        //         } else if (error.request) {
+        //             // The request was made but no response was received
+        //             // `error.request` is an instance of XMLHttpRequest in the 
+        //             // browser and an instance of
+        //             // http.ClientRequest in node.js
+        //             console.log(error.request);
+        //         } else {
+        //             // Something happened in setting up the request that triggered an Error
+        //             console.log('Error', error.message);
+        //         }
+        //         console.log(error.config);
+        //     });  
+           
     }
 
 
@@ -112,7 +149,7 @@ class Search extends Component {
             filteredWordResults.map((results) => {
                 return newState.push({
                     word: results.word,
-                    id: results,
+                    id: results.score,
                 })
 
             })
@@ -120,7 +157,6 @@ class Search extends Component {
                 chosenWord: newState,
             })
         })
-
 
     }
 
@@ -176,18 +212,18 @@ class Search extends Component {
                 </form>
 
                
-
+                <Draggable>
                  <div className="words-container">
                     <div className="left-side">
                         <h2>Results</h2>
-                        <div class="dropBox resultsArea" onDrop={this.drop} onDragOver={this.allowDrop} onDragStart={this.drag}>
+                        <div class="dropBox resultsArea" onDrop={this.drop} onDragStart={this.drag}>
                             
 
                         <ul >
                             {
                                 this.state.chosenWord.map((results, index ) => {
                                 return (
-                                    <li  id={index} onDragStart={this.drag}  draggable="true" key={index}>{results.word}&nbsp;</li>
+                                    <li  id={results} onDragStart={this.drag} draggable="true" key={index}>{results.word}&nbsp;</li>
                                         
                                 )
                                 })
@@ -280,7 +316,7 @@ class Search extends Component {
                         <button onClick={this.savePoemToFireBase}>Save Poem</button>
                     </div>
                 </div>
-
+                </Draggable>
                 </section>
 
         )
