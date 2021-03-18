@@ -284,11 +284,11 @@ li:focus {
 .fridgeImage{
 
   position: relative;
+  display: block;
   margin: 0 auto;
   margin-top: -55%;
   z-index: 1;
   width: 80%;
-  margin-left: 7%;
 }
 
 @media(max-width: 900px){
