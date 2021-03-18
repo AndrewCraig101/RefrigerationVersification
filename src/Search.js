@@ -205,16 +205,17 @@ class Search extends Component {
         return (
            <section>
 
-                 <form onSubmit={this.handleSubmit} className="search-bar">
+                 <form onSubmit={this.handleSubmit} className="searchBar">
                     <label className="sr-only" htmlFor="search">Search</label>
                     <input required type="text" placeholder="enter word here" id="search" value={this.state.userSearch} onChange={this.handleChange} ></input>
                     <button type="submit" onClick={this.handleClick}>Search</button>
                 </form>
 
-               
-                
-                 <div className="words-container">
-                    <div className="left-side">
+
+
+                 <div className="wordsContainer">
+                    <div className="leftSide">
+
                         <h2>Results</h2>
                         <div class="dropBox resultsArea" onDrop={this.drop} onDragStart={this.drag}>
                             
@@ -310,13 +311,8 @@ class Search extends Component {
                     </div>
 
                     <br />
-                    {/* <div className="right-side">
-                        <h2>Poem Area</h2>
-                        <div class="dropBox poemArea" onDrop={this.drop} onDragOver={this.allowDrop} onDragStart={this.drag}></div>
-                        <button onClick={this.savePoemToFireBase}>Save Poem</button>
-                    </div> */}
                 </div>
-                
+
                 </section>
 
         )
