@@ -42,7 +42,7 @@ a:active {
   text-decoration: none; color:white; 
 }
 img { 
-  max-width: 100% 
+  max-width: 100%;
 }
 
 /* ******MAIN SECTION******* */
@@ -61,6 +61,7 @@ h1{
   overflow-y: hidden;
 }
 
+
 .imageContainerMain{
   position: relative;
   width: 110%;
@@ -74,7 +75,7 @@ h1{
   position: relative;
   z-index: 1;
   width: 90%;
-  margin-left: 7%;
+  /* margin-left: 7%; */
   overflow-y: hidden;
 }
 
@@ -108,6 +109,7 @@ main {
 
 .poems-container {
   width: 50%;
+  margin-bottom: 500px;
 }
 
 /* ********SEARCH SECTION******* */
@@ -167,21 +169,39 @@ h2{
 
 }
 
+
+
 /* **********POEM RESULTS AND SUGGESTIONS********** */
 
 
 .dropBox {
-  width: 400px;
-  height: 400px;
+  width: 250px;
+  height: 230px;
   padding: 10px;
   border: 8px solid #1a4543;
   margin: 5px 0 10px 100px;
-  width: 60%;
-  height: 200px;
+  /* width: 60%; */
+  /* height: 200px; */
   overflow: auto;
   padding: 6px;
   z-index: 5;
   /* box-shadow:  4px 4px 0 0 #85fb83, 9px 9px black; */
+}
+
+.dropBox.suffixArea {
+  margin-bottom: 100px;
+}
+
+.dropBox h3 {
+  color: white;
+  text-shadow: 1px 1px #85fb83, 4px 5px #1a4543 ;
+  font-size: 2rem;
+  padding: 10px 0 10px 0;
+  font-weight: 400;
+}
+
+.dropBox h3:first-of-type {
+  padding-top: 0;
 }
 
 .word {
@@ -238,7 +258,7 @@ li:focus {
 }
 
 .poemArea{
-  margin-top: 160px;
+  /* margin-top: 160px; */
   border: none;
   box-shadow: none;
   background-color: none;
