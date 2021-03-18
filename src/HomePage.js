@@ -3,6 +3,7 @@ import Search from './Search';
 import Logo from './Logo';
 import App from './App';
 import PoemsButton from './PoemsButton';
+import JunoButton from './JunoButton';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 
@@ -23,6 +24,7 @@ function HomePage() {
                     <div className="imageContainerMain">
                     <img src="./assets/fridgemain.png" className="fridgeImageMain" alt="" />
                     </div>
+                    <JunoButton />
             </section>
         </main>
 

@@ -4,7 +4,7 @@ import React from 'react';
 function PoemsButton() {
     return(
         <div className="poemsButton">
-            <img src="./assets/pastPoemsButton.png" alt="" />
+            <img src="./assets/pastPoemButton.png" alt="" />
         </div>
     )
 }

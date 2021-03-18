@@ -47,11 +47,16 @@ img {
 
 /* ******MAIN SECTION******* */
 
+h1{
+  /* text-align: center; */
+  position: relative;
+}
+
 .App {
-  background-image: url(./darkwaves.png);
+  background-image: url(./poemBackground.png);
   background-size: cover;
   background-repeat: no-repeat;  
-  height: 100vh;
+  height: 130vh;
   display: flex;
   overflow-y: hidden;
 }
@@ -88,8 +93,16 @@ main {
   position: absolute;
   z-index: 6;
   width: 100px;
-  left: 50%;
+  left: 84%;
   top: 20%;
+}
+
+.junoButton{
+  position: absolute;
+  z-index: 7;
+  width: 200px;
+  left: 70%;
+  top: 100%;
 }
 
 .poems-container {
