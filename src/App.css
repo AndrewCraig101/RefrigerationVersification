@@ -84,7 +84,8 @@ main {
   text-transform: lowercase;
 }
 
-.logo {
+.logo,
+.pastLogo {
   margin-top: -15%;
   width: 300px;
 }

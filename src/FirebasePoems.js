@@ -4,6 +4,7 @@ import App from './App';
 import Poem from './Poem';
 import Footer from './Footer';
 import Facts from './Facts';
+import PastLogo from './PastLogo';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 
@@ -13,7 +14,7 @@ function FirebasePoems () {
         <body className="firebase">
             <main className="firebase-container">  
             <Link to="/">
-                <Logo />
+                <PastLogo />
              </Link>
                 <Facts/>
                 <section className="past-poems-container">
