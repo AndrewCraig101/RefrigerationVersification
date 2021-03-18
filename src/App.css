@@ -42,7 +42,7 @@ a:active {
   text-decoration: none; color:white; 
 }
 img { 
-  max-width: 100% 
+  max-width: 100%;
 }
 
 /* ******MAIN SECTION******* */
@@ -61,21 +61,25 @@ h1{
   overflow-y: hidden;
 }
 
-.imageContainerMain{
+.fridgeContainer{
+  width: 50%;
   position: relative;
-  width: 110%;
   margin: 0 auto;
-  left: 85%;
+}
+
+
+.imageContainerMain{
   right: 0%;
-  margin-top: -70%;
 }
 
 .fridgeImageMain {
   position: relative;
   z-index: 1;
-  width: 90%;
-  margin-left: 7%;
+  width: 100%;
+  max-width: 100%;
+  left: 300px;
   overflow-y: hidden;
+  margin-top: -190%;
 }
 
 main {
@@ -84,7 +88,8 @@ main {
   text-transform: lowercase;
 }
 
-.logo {
+.logo,
+.pastLogo {
   margin-top: -15%;
   width: 300px;
 }
@@ -93,21 +98,24 @@ main {
   position: absolute;
   z-index: 6;
   width: 100px;
-  left: 84%;
-  top: 20%;
+  left: 116%;
+  margin-top: -450px;
 }
 
 .junoButton{
   position: absolute;
   z-index: 7;
-  width: 200px;
-  left: 70%;
-  top: 110%;
+  max-width: 200px;
+  width: 100%;
+  margin-left: 70%;
+  margin-top: 30%;
 }
 
-.poems-container {
+.resultsContainer {
   width: 50%;
+  margin-bottom: 500px;
 }
+
 
 /* ********SEARCH SECTION******* */
 
@@ -166,21 +174,38 @@ h2{
 
 }
 
+
+
 /* **********POEM RESULTS AND SUGGESTIONS********** */
 
 
 .dropBox {
-  width: 400px;
-  height: 400px;
+  max-width: 500px;
+  width: 100%;
+  height: 230px;
   padding: 10px;
   border: 8px solid #1a4543;
   margin: 5px 0 10px 100px;
-  width: 60%;
-  height: 150px;
   overflow: auto;
   padding: 6px;
   z-index: 5;
   /* box-shadow:  4px 4px 0 0 #85fb83, 9px 9px black; */
+}
+
+.dropBox.suffixArea {
+  margin-bottom: 100px;
+}
+
+.dropBox h3 {
+  color: white;
+  text-shadow: 1px 1px #85fb83, 4px 5px #1a4543 ;
+  font-size: 2rem;
+  padding: 10px 0 10px 0;
+  font-weight: 400;
+}
+
+.dropBox h3:first-of-type {
+  padding-top: 0;
 }
 
 .word {
@@ -225,9 +250,9 @@ li:focus {
 
 .right-side {
   width: 100%;
-  margin-left: 98%;
+  margin-left: 38%;
   margin-right: 100px;
-  margin-top: -650px;
+  margin-top: -160%;
   border: none;
   margin-bottom: 50px;
 }
@@ -237,7 +262,7 @@ li:focus {
 }
 
 .poemArea{
-  margin-top: 180px;
+  width: 600px;
   border: none;
   box-shadow: none;
   background-color: none;
@@ -245,7 +270,12 @@ li:focus {
   position: relative;
   height: 200px;
   overflow: auto;
+  padding: 0 50px;
   background-color: tomato;
+}
+
+.saveButton{
+  margin-left: 60px;
 }
 
 /* **********FIREBASE PAGE********** */
@@ -253,16 +283,16 @@ li:focus {
 
 .firebase {
   background-image: url(./darkwaves.png);
-  /* background-size: cover;
-  background-repeat: no-repeat;   */
-  /* height: 150vh; */
-  /* overflow-y: hidden;
-  display: flex; */
+  background-size: cover;
+  background-repeat: no-repeat;  
   overflow: auto;
 }
 
 .fridgeImage{
+
   position: relative;
+  margin: 0 auto;
+  margin-top: -55%;
   z-index: 1;
   width: 80%;
   margin-left: 7%;
@@ -276,7 +306,7 @@ li:focus {
 }
 
 .firebaseTitle{
-  font-size: 5rem;
+  font-size: 6rem;
   margin: 0 auto;
   text-align: center;
   margin-bottom: 0px;
@@ -284,7 +314,8 @@ li:focus {
   color: white;
   text-shadow: 1px 1px #85fb83, 4px 5px #1a4543 ;
   font-weight: 700;
-  margin-top: -200px;
+  margin-top: -70%;
+  z-index: 6;
 }
 
 @media(max-width: 900px){
@@ -298,8 +329,8 @@ li:focus {
 .pastPoemContainer {
   height: 500px;
   width: 900px;
-  margin-top: -120%;
-  margin-left: 25%;
+  margin-top: 5%;
+  margin-left: 20%;
   overflow: auto;
   position: relative;
   z-index: 5;
@@ -329,58 +360,53 @@ li:focus {
 
 /* *******FACTS ELEMENT******* */
 .factWrapper {
-  max-width: 1440px;
+  position: relative;
+  margin-top: 300px;
+  max-width: 300px;
+  width:100%;
+  background: url(./factsPostIt.png);
+  background-size: 100%;
+  z-index: 8;
+  margin-bottom: 50px;
+  margin-left: 40%;
 }
-.poetryHeading {
-  text-align: center;
-  color:#1A4543;
-  font-family: ‘Kanit’, sans-serif;
-  font-size: 3rem;
-  margin-top: 20px;
-}
+
 .poetryDivSection {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    border-top: 8px solid #FFFEB9;
 }
 .poetryTermsDiv {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 50%;
-    padding: 20px;
-    background-color: #1A4543
+    width: 80%;
+    padding: 10px;
+    overflow: auto;
+    height: 300px;
 }
-.poetryTerms1div {
-    border-right: 2px solid #FFFEB9;
-}
-.poetryTerms2div {
-    border-left: 2px solid #FFFEB9;
-}
+
 .titlePara {
     font-family: ‘Kanit’, sans-serif;
-    color: white;
-    font-size: 5rem;
+    font-weight: 700;
+    color: black;
+    font-size: 2.5rem;
     text-align: center;
-    padding-bottom: 15px;
+    margin-top: -25px;
+    text-transform: uppercase;
 }
 .titleDef {
+  margin-top: 10px;
     font-family: ‘Kanit’, sans-serif;
-    color: #85FB83;
-    font-size: 3rem;
+    color: black;
+    font-size: 2rem;
     text-align: center;
-    margin-bottom: 10px;
+    height: 150px;
+    overflow: auto;
 }
-p a {
-  color: white;
-  font-size: 2rem;
-}
-.linkPara {
-  font-size: 2rem;
-}
+
 
 
 
