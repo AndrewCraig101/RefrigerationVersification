@@ -94,15 +94,16 @@ main {
   z-index: 6;
   width: 100px;
   left: 84%;
-  top: 20%;
+  top: 250px;;
 }
 
 .junoButton{
   position: absolute;
   z-index: 7;
-  width: 200px;
+  max-width: 200px;
+  width: 100%;
   left: 70%;
-  top: 110%;
+  top: 120%;
 }
 
 .poems-container {
@@ -176,7 +177,7 @@ h2{
   border: 8px solid #1a4543;
   margin: 5px 0 10px 100px;
   width: 60%;
-  height: 150px;
+  height: 200px;
   overflow: auto;
   padding: 6px;
   z-index: 5;
@@ -237,7 +238,7 @@ li:focus {
 }
 
 .poemArea{
-  margin-top: 180px;
+  margin-top: 160px;
   border: none;
   box-shadow: none;
   background-color: none;
@@ -264,6 +265,7 @@ li:focus {
 .fridgeImage{
 
   position: relative;
+  margin: 0 auto;
   margin-top: -50%;
   z-index: 1;
   width: 80%;
