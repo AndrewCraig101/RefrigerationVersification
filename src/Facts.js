@@ -73,7 +73,6 @@ const Facts = () => {
     return (
         <>
             <div className="factWrapper" >
-                <h1 className="poetryHeading">Poetry Facts!</h1>
                 <section className="poetryDivSection" >
                     <div className="poetryTermsDiv poetryTerms1div">
                         <p className="titlePara">{poemProfile1.title}</p>
@@ -81,11 +80,11 @@ const Facts = () => {
                         <p className="linkPara">From <a href="https://quizlet.com" className="factsLink">quizlet.com</a></p>
                     </div>
 
-                    <div className="poetryTermsDiv poetryTerms2div">
+                    {/* <div className="poetryTermsDiv poetryTerms2div">
                         <p className="titlePara">{poemProfile2.title}</p>
                         <p className="titleDef">{poemProfile2.definition}</p>
                         <p className="linkPara">From <a href="https://www.writersdigest.com" className="factsLink">writersdigest.com</a></p>
-                    </div>
+                    </div> */}
                 </section >
             </div>
         </>
