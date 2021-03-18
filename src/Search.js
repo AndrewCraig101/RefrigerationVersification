@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Component } from 'react';
 import firebase from './firebase';
-import Draggable from 'react-draggable';
+// import Draggable from 'react-draggable';
 
 //you have to call it like this when creating a constructor because thems the rules 
 class Search extends Component {
