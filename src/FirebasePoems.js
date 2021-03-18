@@ -15,12 +15,12 @@ function FirebasePoems () {
             <Link to="/">
                 <Logo />
              </Link>
-                <h1 className="firebaseTitle">Past Poems</h1>
                 <Facts/>
                 <section className="past-poems-container">
                     <div className="imageContainer">
                         <img src="./assets/fridge.png" className="fridgeImage" alt=""/>
                     </div>
+                <h1 className="firebaseTitle">Past Poems</h1>
                     <Poem />
                 </section>
             </main>

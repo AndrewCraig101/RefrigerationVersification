@@ -256,9 +256,6 @@ li:focus {
   background-image: url(./darkwaves.png);
   background-size: cover;
   background-repeat: no-repeat;  
-  /* height: 150vh; */
-  /* overflow-y: hidden;
-  display: flex; */
   overflow: auto;
 }
 
@@ -266,7 +263,7 @@ li:focus {
 
   position: relative;
   margin: 0 auto;
-  margin-top: -50%;
+  margin-top: -55%;
   z-index: 1;
   width: 80%;
   margin-left: 7%;
@@ -280,7 +277,7 @@ li:focus {
 }
 
 .firebaseTitle{
-  font-size: 5rem;
+  font-size: 6rem;
   margin: 0 auto;
   text-align: center;
   margin-bottom: 0px;
@@ -288,7 +285,8 @@ li:focus {
   color: white;
   text-shadow: 1px 1px #85fb83, 4px 5px #1a4543 ;
   font-weight: 700;
-  margin-top: -200px;
+  margin-top: -70%;
+  z-index: 6;
 }
 
 @media(max-width: 900px){
@@ -302,8 +300,8 @@ li:focus {
 .pastPoemContainer {
   height: 500px;
   width: 900px;
-  margin-top: -60%;
-  margin-left: 25%;
+  margin-top: 5%;
+  margin-left: 20%;
   overflow: auto;
   position: relative;
   z-index: 5;
@@ -334,29 +332,21 @@ li:focus {
 /* *******FACTS ELEMENT******* */
 .factWrapper {
   position: relative;
-  margin-top: 400px;
+  margin-top: 300px;
   max-width: 300px;
   width:100%;
-  background: url(./yellowpostit.png);
+  background: url(./factsPostIt.png);
   background-size: 100%;
   z-index: 8;
   margin-bottom: 50px;
   margin-left: 40%;
 }
 
-.poetryHeading {
-  text-align: center;
-  color:#1A4543;
-  font-family: ‘Kanit’, sans-serif;
-  font-size: 3rem;
-  margin-top: 20px;
-}
 .poetryDivSection {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    /* border-top: 8px solid #FFFEB9; */
 }
 .poetryTermsDiv {
     display: flex;
@@ -364,34 +354,30 @@ li:focus {
     align-items: center;
     flex-direction: column;
     width: 80%;
-    padding: 20px;
+    padding: 10px;
     overflow: auto;
     height: 300px;
-    /* background-color: #1A4543 */
 }
 
 .titlePara {
     font-family: ‘Kanit’, sans-serif;
+    font-weight: 700;
     color: black;
     font-size: 2.5rem;
     text-align: center;
-    margin-top: 5px;
+    margin-top: -25px;
+    text-transform: uppercase;
 }
 .titleDef {
+  margin-top: 10px;
     font-family: ‘Kanit’, sans-serif;
     color: black;
     font-size: 2rem;
     text-align: center;
-    margin-bottom: 10px;
-    /* margin-top: 50px; */
+    height: 150px;
+    overflow: auto;
 }
-p a {
-  color: white;
-  font-size: 2rem;
-}
-.linkPara {
-  font-size: 2rem;
-}
+
 
 
 

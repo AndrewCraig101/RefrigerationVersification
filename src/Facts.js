@@ -77,7 +77,6 @@ const Facts = () => {
                     <div className="poetryTermsDiv poetryTerms1div">
                         <p className="titlePara">{poemProfile1.title}</p>
                         <p className="titleDef">{poemProfile1.definition}</p>
-                        <p className="linkPara">From <a href="https://quizlet.com" className="factsLink">quizlet.com</a></p>
                     </div>
 
                     {/* <div className="poetryTermsDiv poetryTerms2div">
