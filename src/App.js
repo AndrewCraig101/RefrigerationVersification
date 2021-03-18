@@ -1,7 +1,6 @@
 import './App.css';
 import Search from './Search';
 import Logo from './Logo';
-import PostItNote from './PostItNote';
 import Footer from './Footer';
 import HomePage from './HomePage'
 import FirebasePoems from './FirebasePoems';
