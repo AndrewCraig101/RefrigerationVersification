@@ -1,8 +1,6 @@
 import './App.css';
-import Logo from './Logo';
 import App from './App';
 import Poem from './Poem';
-import Footer from './Footer';
 import Facts from './Facts';
 import PastLogo from './PastLogo';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';

@@ -57,7 +57,7 @@ class SavePoemArea extends Component {
 	render() {
 		return (
 
-			<div className="right-side">
+			<div className="rightSide">
 			<h2>Poem Area</h2>
 			<div class="dropBox poemArea" onDrop={this.drop} onDragOver={this.allowDrop} onDragStart={this.drag}></div>
 			<button className="saveButton" onClick={this.savePoemToFireBase}>Save Poem</button>

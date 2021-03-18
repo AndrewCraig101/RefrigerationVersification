@@ -4,7 +4,7 @@ import Logo from './Logo';
 import App from './App';
 import PoemsButton from './PoemsButton';
 import JunoButton from './JunoButton';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as  Link } from 'react-router-dom';
 import SavePoemArea from './SavePoemArea';
 
 
@@ -21,9 +21,6 @@ function HomePage() {
                 </div>
             </section>
             <section className="fridgeContainer">
-                {/* <div className="imageContainerMain">
-                    <img src="./assets/fridgemain.png" className="fridgeImageMain" alt="" />
-                </div> */}
                 <SavePoemArea />
             </section>
                 <Link to="/pastpoems">

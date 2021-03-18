@@ -67,21 +67,6 @@ h1{
   margin: 0 auto;
 }
 
-
-/* .imageContainerMain{
-  right: 0%;
-}
-
-.fridgeImageMain {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: 100%;
-  left: 300px;
-  overflow-y: hidden;
-  margin-top: -190%;
-} */
-
 main {
   font-family: 'Kanit', sans-serif;
   font-weight: 400;
@@ -103,7 +88,7 @@ main {
 
 /* ********SEARCH SECTION******* */
 
-.search-bar {
+.searchBar {
   position: absolute;
   margin: -200px 0 0 300px;
 }
@@ -112,7 +97,7 @@ input[type="text"],
 button {
   border: 4px solid black;
   padding: 5px 15px;
-  font-size: 2rem;
+  font-size: calc(1rem + 1vw);
   font-family: 'Kanit', sans-serif;
   text-transform: lowercase;
 }
@@ -142,9 +127,10 @@ button{
 
 /* **********WORDS CONTAINER********** */
 
-.words-container{
+.wordsContainer{
     margin-top: -40px;
 }
+
 
 h2{
   margin: 0 auto;
@@ -173,7 +159,6 @@ h2{
   overflow: auto;
   padding: 6px;
   z-index: 5;
-  /* box-shadow:  4px 4px 0 0 #85fb83, 9px 9px black; */
 }
 
 .dropBox.suffixArea {
@@ -232,7 +217,7 @@ li:focus {
 
 /* ********** FRIDGE ********** */
 
-.right-side {
+.rightSide {
   max-width: 1000px;
   width: 100%;
   margin-left: 100%;
@@ -243,7 +228,7 @@ li:focus {
   position: absolute;
 }
 
-.right-side h2{
+.rightSide h2{
   display: none;
 }
 
@@ -265,7 +250,7 @@ li:focus {
 }
 
 .saveButton{
-  width: 150px;
+  width: 250px;
   margin-left: 310px;
 }
 
