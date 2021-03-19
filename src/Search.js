@@ -1,7 +1,5 @@
 import axios from 'axios';
 import { Component } from 'react';
-import firebase from './firebase';
-// import Draggable from 'react-draggable';
 
 //you have to call it like this when creating a constructor because thems the rules 
 class Search extends Component {
@@ -212,7 +210,7 @@ class Search extends Component {
                
                  <form onSubmit={this.handleSubmit} className="searchBar">
                     <label className="sr-only" htmlFor="search">Search</label>
-                    <input required type="text" placeholder="enter word here" id="search" value={this.state.userSearch, this.state.userSuggestion} onChange={this.handleChange} ></input>
+                    <input required type="text" placeholder="enter word here" id="search" value={this.state.userSearch | this.state.userSuggestion} onChange={this.handleChange} ></input>
                     <button type="submit" onClick={this.handleClick}>Search</button>
                     <div className="autoResults">
                         <ul>
