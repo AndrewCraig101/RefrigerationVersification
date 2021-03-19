@@ -97,7 +97,7 @@ h1{
   .App{
     background-image: url(./mobilebackground700.png);
       overflow-y: hidden;
-      height: 150vh;
+      height: 200vh;
       background-size: cover;
   }
 }
@@ -105,7 +105,17 @@ h1{
   .App{
     background-image: url(./mobilebackground500.png);
       overflow-y: hidden;
-      height: 150vh;
+      height: 210vh;
+      background-size: cover;
+      overflow-x: hidden;
+  }
+}
+
+@media(max-width: 550px){
+  .App{
+    background-image: url(./mobilebackground450.png);
+      overflow-y: hidden;
+      height: 230vh;
       background-size: cover;
   }
 }
@@ -350,6 +360,14 @@ h2{
     width: 180px;
   }
 }
+@media(max-width: 550px){
+  .dropBox{
+    height: 150px;
+    position: absolute;
+    top: 300px;
+    left: 100px;
+  }
+}
 
 .dropBox.suffixArea {
   margin-bottom: 100px;
@@ -463,6 +481,12 @@ li:focus {
     margin-top: -430px;
   }
 }
+@media(max-width: 850px){
+  .rightSide{
+    margin-left: -210%;
+    margin-top: -470px;
+  }
+}
 
 
 .rightSide h2{
@@ -503,11 +527,12 @@ li:focus {
 @media(max-width: 850px) {
   .poemArea{
     height: 150px;
+    max-width: 300px;
   }
 }
-@media(max-width: 850px) {
+@media(max-width: 550px) {
   .poemArea{
-    max-width: 300px;
+    height: 100px;
   }
 }
 
@@ -518,6 +543,12 @@ li:focus {
 
 @media(max-width: 850px) {
   .saveButton{
+    width: 100px;
+  }
+}
+@media(max-width: 550px) {
+  .saveButton{
+    margin-top: 300px;
     width: 100px;
   }
 }
@@ -573,6 +604,13 @@ li:focus {
     margin-top: -550px;
   }
 }
+@media(max-width: 550px) {
+  .poemsButton{
+    width: 80px;
+    margin-left: 90px;
+    margin-top: -260px;
+  }
+}
 
 .junoButton{
   position: absolute;
@@ -622,6 +660,12 @@ li:focus {
 .junoButton{
   margin-top: -80px;
   width: 140px;
+}
+}
+@media(max-width: 550px){
+.junoButton{
+  margin-top: 170px;
+  margin-left: 200px;
 }
 }
 
