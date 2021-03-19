@@ -26,8 +26,6 @@ class Search extends Component {
         
     }
 
-    
-  
     //this function allows us to grab the value from the input without hitting the submit value
 
     handleChange = (e) => {
@@ -47,8 +45,6 @@ class Search extends Component {
                  // console.log(res)
                     const autoresults = (res.data)
                   
-
-
                 const suggestion = []
 
                 autoresults.map((autoword) => {
@@ -111,35 +107,6 @@ class Search extends Component {
 
 
     }
-    //////PAN EXAMPLE
-
-    onPanStart = e => {
-        if (e.type === 'dragstart') {
-          e.dataTransfer.setData("text/plain", e.target.id, 0, 0)
-        }
-        this.setState({ dragging: true });
-      };
-
-      onPan = e => {
-        if (e.clientX <= 0 || e.clientY <= 0) return false;
-        this.setState(this.getPan(e));
-      };
-
-      onPanEnd = e => {
-        e.preventDefault();
-        this.setState({ dragging: false });
-      };
-
-      getPan = e => {
-        if (e.type.includes('drag')) {
-          return { x: e.clientX, y: e.clientY };
-        }
-      
-        const touch = e.targetTouches[0];
-        return { x: touch.clientX, y: touch.clientY };
-      }
-
-
 
     // this function allows us to only call api on user search
     userSearch = () => {
@@ -168,8 +135,7 @@ class Search extends Component {
                     return results.word
                 } 
             })
-            
-
+        
             const newState = []
 
             //creates our own array so you don't have to filter through all the json results
@@ -204,9 +170,6 @@ class Search extends Component {
 
 
     render() {
-
-
-        
 
         const questionWords = [
             { word: "who", id: "who" }, { word: "what", id: "what" }, { word: "when", id: "when" }, { word: "where", id: "where" }, { word: "why", id: "why" }, { word: "how", id: "how" }
@@ -251,16 +214,18 @@ class Search extends Component {
                     <label className="sr-only" htmlFor="search">Search</label>
                     <input required type="text" placeholder="enter word here" id="search" value={this.state.userSearch, this.state.userSuggestion} onChange={this.handleChange} ></input>
                     <button type="submit" onClick={this.handleClick}>Search</button>
-                    <div className="">
+                    <div className="autoResults">
+                        <ul>
                     {
                         this.state.autoWords.map(
                             (results, index) => {
                                 return (
-                                    <p key={index}>{results.word}</p>
+                                    <li key={index}>{results.word}</li>
                                 )
                             }
                         )
                     }
+                    </ul>
                     </div>
                 </form>
 
@@ -277,18 +242,8 @@ class Search extends Component {
                             {
                                 this.state.chosenWord.map((results, index ) => {
                                 return (
-                                    <li  id={results} 
-                                    draggable="false" key={index}  style={ {
-                                        display: 'inline-block',
-                                        cursor: 'move',
-                                        WebkitTransform: `translate3d(${ this.x - 32 }px, ${ this.y - 32 }px, 0)`,
-                                        transform: `translate3d(${ this.x - 32 }px, ${ this.y - 32 }px, 0)`,
-                                      } } onTouchStart={ this.onPanStart }
-                                      onDragStart={ this.onPanStart }
-                                      onDrag={ this.onPan }
-                                      onTouchMove={ this.onPan }
-                                      onTouchEnd={ this.onPanEnd }
-                                      onDragEnd={ this.onPanEnd}>{results.word}&nbsp;</li>
+                                    <li  id={results} onDragStart={this.drag} draggable="true" key={index}>{results.word}&nbsp;</li>
+                                    
                                         
                                 )
                                 })
