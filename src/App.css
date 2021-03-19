@@ -592,13 +592,11 @@ li:focus {
 }
 @media(max-width: 490px) {
   .poemArea{
-    background-color: tomato;
     height: 100px;
   }
 }
 @media(max-width: 395px) {
   .poemArea{
-    background-color: tomato;
     max-width: 200px;
     height: 100px;
   }
