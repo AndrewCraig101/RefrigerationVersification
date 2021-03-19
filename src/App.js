@@ -1,9 +1,7 @@
 import './App.css';
-import Search from './Search';
-import Logo from './Logo';
 import HomePage from './HomePage'
 import FirebasePoems from './FirebasePoems';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 
 

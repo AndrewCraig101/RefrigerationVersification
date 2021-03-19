@@ -154,6 +154,7 @@ main {
   margin: -200px 0 0 300px;
 }
 
+
 @media(max-width: 1400px){
   .searchBar{
     margin-left: 260px;
@@ -170,6 +171,18 @@ main {
   .searchBar{
     margin-left: 180px;
 }
+}
+
+.autoResults {
+  max-width: 250px;
+  padding: 10px;
+  
+
+}
+
+.autoResults ul {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 input[type="text"],

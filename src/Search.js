@@ -1,7 +1,5 @@
 import axios from 'axios';
 import { Component } from 'react';
-import firebase from './firebase';
-// import Draggable from 'react-draggable';
 
 //you have to call it like this when creating a constructor because thems the rules 
 class Search extends Component {
@@ -16,51 +14,63 @@ class Search extends Component {
 
             userSearch: "",
 
+            userSuggestion: [],
+
             chosenWord: [],
+
+            autoWords: [],
+           
         }
+        
     }
 
-    
-  
     //this function allows us to grab the value from the input without hitting the submit value
 
     handleChange = (e) => {
         this.setState({
-            userSearch: e.target.value
+            userSearch: e.target.value,
+            userSuggestion: e.target.value
         })
-        // this.setState({
-        //     suggestion: " ",
-        // })
-        //  axios({
-        //          url: `https://api.datamuse.com/sug?s=`,
-        //          params: {
-        //            s: this.state.userSearch,
-        //            max: 10,
-        //          }
-        //        }).then(res => {
-        //          // console.log(res)
-        //          setSuggestions(res.data)
-        //            console.log(setSuggestions)
-        //        }).catch((error) => {
-        //         // Error
-        //         if (error.response) {
-        //             // The request was made and the server responded with a status code
-        //             // that falls out of the range of 2xx
-        //             // console.log(error.response.data);
-        //             // console.log(error.response.status);
-        //             // console.log(error.response.headers);
-        //         } else if (error.request) {
-        //             // The request was made but no response was received
-        //             // `error.request` is an instance of XMLHttpRequest in the 
-        //             // browser and an instance of
-        //             // http.ClientRequest in node.js
-        //             console.log(error.request);
-        //         } else {
-        //             // Something happened in setting up the request that triggered an Error
-        //             console.log('Error', error.message);
-        //         }
-        //         console.log(error.config);
-        //     });  
+        this.setState({
+            suggestion: " ",
+        })
+         axios({
+                 url: `https://api.datamuse.com/sug?s=${this.state.userSuggestion}`, 
+                 params: {
+                   max: 5,
+                 }
+               }).then((res) => {
+                 // console.log(res)
+                    const autoresults = (res.data)
+                  
+                const suggestion = []
+
+                autoresults.map((autoword) => {
+                    return suggestion.push({
+                        word: autoword.word,
+                        id: autoword.score,
+                    })
+                })
+                this.setState({
+                    autoWords: suggestion,
+                })
+
+
+               }).catch((error) => {
+                // Error
+                if (error.response) {
+                   
+                    console.log(error.response.data);
+                  
+                } else if (error.request) {
+                   
+                    console.log(error.request);
+                } else {
+                    
+                    console.log('Error', error.message);
+                }
+                console.log(error.config);
+            });  
            
     }
 
@@ -96,25 +106,6 @@ class Search extends Component {
 
     }
 
-
-    // savePoemToFireBase = () => {
-    //     let poemText = [];
-    //     const poemArea = document.querySelector(".poemArea");
-    //     const poemAreaElements = poemArea.getElementsByTagName("li");
-    //     Array.from(poemAreaElements).forEach(item => {
-    //         poemText.push(item.innerText)
-    //     });
-    //     poemText = poemText.join("");
-    //     poemArea.innerHTML = "";
-    //     if (poemText !== "") {
-    //     const dbRef = firebase.database().ref();
-    //     dbRef.push(poemText);
-    //     } else {
-    //         console.log("poem is blank")
-    //     }
-    // }
-
-
     // this function allows us to only call api on user search
     userSearch = () => {
 
@@ -135,14 +126,14 @@ class Search extends Component {
 
             const filteredWordResults = wordResults.filter((results) => {
                 if
-                    (results.word === 'who' || results.word === "what" || results.word === "when" || results.word === "where" || results.word === "why" || results.word === "how" || results.word === "the" || results.word === "a" || results.word === "is" || results.word === "he" || results.word === "his" || results.word === "she" || results.word === "her" || results.word === "hers" || results.word === "they" || results.word === "them" || results.word === "their" || results.word === "there" || results.word === "are" || results.word === "it" || results.word === "I" || results.word === "you" || results.word === "my" || results.word === "for" || results.word === "and" || results.word === "or" || results.word === "me" || results.word === "your" || results.word === "but" || results.word === "so" || results.word === "that" || results.word === "in" || results.word === "on" || results.word === "as" || results.word === "of" || results.word === "by" || results.word === "was" || results.word === "had" || results.word === "from" || results.word === "will" || results.word === "can" || results.word === "would" || results.word === "this" || results.word === "all" || results.word === "only" || results.word === "out" || results.word === "with" || results.word === "which" || results.word === "went" || results.word === "did" || results.word === "then" || results.word === "like" || results.word === ".") 
+                (results.word === 'who' || results.word === "what" || results.word === "when" || results.word === "where" || results.word === "why" || results.word === "how" || results.word === "I" || results.word === "he" || results.word === "his" || results.word === "she" || results.word === "her" || results.word === "hers" || results.word === "they" || results.word === "them" || results.word === "their" || results.word === "there" || results.word === "this" || results.word === "you" || results.word === "your" || results.word === "me" || results.word === "we" || results.word === "it" || results.word === "they" || results.word === "a" || results.word === "an" || results.word === "and" || results.word === "or" || results.word === "that" || results.word === "are" || results.word === "is" || results.word === "was" || results.word === "had" || results.word === "will" || results.word === "can" || results.word === "would" || results.word === "went" || results.word === "did" || results.word === "said" || results.word === "for" || results.word === "but" || results.word === "in" || results.word === "on" || results.word === "as" || results.word === "of" || results.word === "by" || results.word === "from" || results.word === "out" || results.word === "with" || results.word === "like" || results.word === "to" || results.word === ".") 
                     {
                         results = null
                     } else {
                     return results.word
                 } 
             })
-
+        
             const newState = []
 
             //creates our own array so you don't have to filter through all the json results
@@ -156,15 +147,27 @@ class Search extends Component {
             this.setState({
                 chosenWord: newState,
             })
-        })
+        }).catch((error) => {
+            // Error
+            if (error.response) {
+               
+                console.log(error.response.data);
+              
+            } else if (error.request) {
+               
+                console.log(error.request);
+            } else {
+                
+                console.log('Error', error.message);
+            }
+            console.log(error.config);
+        });  
 
     }
 
 
 
     render() {
-
-        
 
         const questionWords = [
             { word: "who", id: "who" }, { word: "what", id: "what" }, { word: "when", id: "when" }, { word: "where", id: "where" }, { word: "why", id: "why" }, { word: "how", id: "how" }
@@ -204,98 +207,112 @@ class Search extends Component {
 
         return (
            <section>
-
+               
                  <form onSubmit={this.handleSubmit} className="searchBar">
                     <label className="sr-only" htmlFor="search">Search</label>
-                    <input required type="text" placeholder="enter word here" id="search" value={this.state.userSearch} onChange={this.handleChange} ></input>
+                    <input required type="text" placeholder="enter word here" id="search" value={this.state.userSearch, this.state.userSuggestion} onChange={this.handleChange} ></input>
                     <button type="submit" onClick={this.handleClick}>Search</button>
+                    <div className="autoResults">
+                        <ul>
+                            {
+                                this.state.autoWords.map(
+                                    (results, index) => {
+                                        return (
+                                            <li key={index}>{results.word}</li>
+                                        )
+                                    }
+                                )
+                            }
+                        </ul>
+                    </div>
                 </form>
 
-
-
+               
+                
                  <div className="wordsContainer">
                     <div className="leftSide">
 
                         <h2>Results</h2>
-                        <div class="dropBox resultsArea" onDrop={this.drop} onDragStart={this.drag}>
+                        <div class="dropBox resultsArea" draggable="true" onDrop={this.drop} onDragStart={this.drag} onDragOver={this.allowDrop}>
                             
 
-                        <ul >
-                            {
-                                this.state.chosenWord.map((results, index ) => {
-                                return (
-                                    <li  id={results} onDragStart={this.drag} onTouchStart={this.drag} draggable="true" key={index}>{results.word}&nbsp;</li>
+                            <ul >
+                                {
+                                    this.state.chosenWord.map((results, index ) => {
+                                    return (
+                                        <li  id={results.id} onDragStart={this.drag} draggable="true" key={index}>{results.word}&nbsp;</li>
                                         
-                                )
-                                })
-                            }
-                        </ul>
+                                            
+                                    )
+                                    })
+                                }
+                            </ul>
                     
-                            </div>
+                        </div>
             
                
                 
                         <br />
                         <h2>Helpful Words</h2>
-                        <div class="dropBox suffixArea" onDrop={this.drop} onDragStart={this.drag}>
+                        <div class="dropBox suffixArea" onDrop={this.drop} onDragStart={this.drag} onDragOver={this.allowDrop}>
                             <ul>
                                 <h3>Questions</h3>
-                                {
-                                    questionWords.map((word, index) => {
-                                        return (
-                                            <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}&nbsp; </li>
-                                        )
-                                    })
-                                }
+                                    {
+                                        questionWords.map((word, index) => {
+                                            return (
+                                                <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}&nbsp; </li>
+                                            )
+                                        })
+                                    }
                                 <h3>Pronouns</h3>
-                                {
-                                    pronouns.map((word, index) => {
-                                        return (
-                                            <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}&nbsp; </li>
-                                        )
-                                    })
-                                }
+                                    {
+                                        pronouns.map((word, index) => {
+                                            return (
+                                                <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}&nbsp; </li>
+                                            )
+                                        })
+                                    }
                                 <h3>Articles</h3>
-                                {
-                                    articleWords.map((word, index) => {
-                                        return (
-                                            <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}&nbsp; </li>
-                                        )
-                                    })
-                                }
+                                    {
+                                        articleWords.map((word, index) => {
+                                            return (
+                                                <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}&nbsp; </li>
+                                            )
+                                        })
+                                    }
                                 <h3>Conjunctions</h3>
-                                {
-                                    conjunction.map((word, index) => {
-                                        return (
-                                            <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}&nbsp; </li>
-                                        )
-                                    })
-                                }
+                                    {
+                                        conjunction.map((word, index) => {
+                                            return (
+                                                <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}&nbsp; </li>
+                                            )
+                                        })
+                                    }
                                 <h3>Verbs</h3>
-                                {
-                                    verbs.map((word, index) => {
-                                        return (
-                                            <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}&nbsp; </li>
-                                        )
-                                    })
-                                }
+                                    {
+                                        verbs.map((word, index) => {
+                                            return (
+                                                <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}&nbsp; </li>
+                                            )
+                                        })
+                                    }
                                 <h3>Prepositions</h3>
-                                {
-                                    preposition.map((word, index) => {
-                                        return (
-                                            <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}&nbsp; </li>
-                                        )
-                                    })
-                                }
-                                    <h3>Punctuation</h3>
-                                {
-                                    constantPunctuation.map((word, index) => {
-                                        return (
-                                            <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}&nbsp;</li>
-                                        )
-                                    })
-                                }
-                                    <h3>Emoji</h3>
+                                    {
+                                        preposition.map((word, index) => {
+                                            return (
+                                                <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}&nbsp; </li>
+                                            )
+                                        })
+                                    }
+                                <h3>Punctuation</h3>
+                                    {
+                                        constantPunctuation.map((word, index) => {
+                                            return (
+                                                <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}&nbsp;</li>
+                                            )
+                                        })
+                                    }
+                                <h3>Emoji</h3>
                                 {
                                     emojis.map((word, index) => {
                                         return (
@@ -309,10 +326,11 @@ class Search extends Component {
 
                         </div>
                     </div>
+                    
 
                     <br />
                 </div>
-
+                
                 </section>
 
         )
