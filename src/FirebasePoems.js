@@ -18,7 +18,6 @@ function FirebasePoems() {
                 <h1 className="firebaseTitle">Past Poems</h1>
                     <section className="past-poems-container">
                         <div className="imageContainer">
-                            {/* <img src="./assets/fridge.png" className="fridgeImage" alt="" /> */}
                         </div>
                         <Poem />
                         <Facts />

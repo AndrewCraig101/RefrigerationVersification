@@ -779,6 +779,10 @@ li:focus {
 
 /* **********FIREBASE PAGE********** */
 
+.firebase-container {
+  margin-top: 150px;
+}
+
 
 .firebase {
   background-image: url(./backgroundImages/darkwaves.png);
