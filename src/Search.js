@@ -17,7 +17,14 @@ class Search extends Component {
             userSearch: "",
 
             chosenWord: [],
+
+            
+                x: document.innerWidth / 2,
+                y: document.innerHeight / 2,
+                dragging: false,
+           
         }
+        
     }
 
     
@@ -95,6 +102,33 @@ class Search extends Component {
 
 
     }
+    //////PAN EXAMPLE
+
+    onPanStart = e => {
+        if (e.type === 'dragstart') {
+          e.dataTransfer.setData("text/plain", e.target.id, 0, 0)
+        }
+        this.setState({ dragging: true });
+      };
+
+      onPan = e => {
+        if (e.clientX <= 0 || e.clientY <= 0) return false;
+        this.setState(this.getPan(e));
+      };
+
+      onPanEnd = e => {
+        e.preventDefault();
+        this.setState({ dragging: false });
+      };
+
+      getPan = e => {
+        if (e.type.includes('drag')) {
+          return { x: e.clientX, y: e.clientY };
+        }
+      
+        const touch = e.targetTouches[0];
+        return { x: touch.clientX, y: touch.clientY };
+      }
 
 
     // savePoemToFireBase = () => {
@@ -142,6 +176,7 @@ class Search extends Component {
                     return results.word
                 } 
             })
+            
 
             const newState = []
 
@@ -163,6 +198,8 @@ class Search extends Component {
 
 
     render() {
+
+        const { x, y, dragging } = this.state;
 
         
 
@@ -216,14 +253,25 @@ class Search extends Component {
                  <div className="words-container">
                     <div className="left-side">
                         <h2>Results</h2>
-                        <div class="dropBox resultsArea" onDrop={this.drop} onDragStart={this.drag}>
+                        <div class="dropBox resultsArea" draggable="true" onDrop={this.drop} onDragStart={this.drag}>
                             
 
                         <ul >
                             {
                                 this.state.chosenWord.map((results, index ) => {
                                 return (
-                                    <li  id={results} onDragStart={this.drag} onTouchStart={this.drag} draggable="true" key={index}>{results.word}&nbsp;</li>
+                                    <li  id={results} 
+                                    draggable="false" key={index}  style={ {
+                                        display: 'inline-block',
+                                        cursor: 'move',
+                                        WebkitTransform: `translate3d(${ this.x - 32 }px, ${ this.y - 32 }px, 0)`,
+                                        transform: `translate3d(${ this.x - 32 }px, ${ this.y - 32 }px, 0)`,
+                                      } } onTouchStart={ this.onPanStart }
+                                      onDragStart={ this.onPanStart }
+                                      onDrag={ this.onPan }
+                                      onTouchMove={ this.onPan }
+                                      onTouchEnd={ this.onPanEnd }
+                                      onDragEnd={ this.onPanEnd}>{results.word}&nbsp;</li>
                                         
                                 )
                                 })
