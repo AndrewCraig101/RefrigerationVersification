@@ -127,6 +127,12 @@ h1{
       background-size: cover;
   }
 }
+@media(max-width: 395px){
+  .App{
+    background-image: url(./backgroundImages/backgroundmobilesmallest.png);
+      height: 180vh;
+  }
+}
 
 .fridgeContainer{
   width: 50%;
@@ -161,6 +167,11 @@ main {
     width: 200px;
   }
 }
+@media(max-width: 395px) {
+  .logo{
+    width: 150px;
+  }
+}
 /* ********SEARCH SECTION******* */
 
 .searchBar {
@@ -183,6 +194,12 @@ main {
 }
 @media(max-width: 950px){
   .searchBar{
+    margin-left: 180px;
+}
+}
+@media(max-width: 395px){
+  .searchBar{
+    margin-top: -100px;
     margin-left: 180px;
 }
 }
@@ -381,6 +398,14 @@ h2{
     width: 150px;
   }
 }
+@media(max-width: 395px){
+  .dropBox{
+    top: 200px;
+    height: 110px;
+    left: 20px;
+    width: 150px;
+  }
+}
 
 .dropBox.suffixArea {
   margin-bottom: 100px;
@@ -511,6 +536,12 @@ li:focus {
     margin-top: -520px;
   }
 }
+@media(max-width: 395px){
+  .rightSide{
+    margin-left: -195%;
+    margin-top: -500px;
+  }
+}
 
 
 .rightSide h2{
@@ -565,6 +596,13 @@ li:focus {
     height: 100px;
   }
 }
+@media(max-width: 395px) {
+  .poemArea{
+    background-color: tomato;
+    max-width: 200px;
+    height: 100px;
+  }
+}
 
 .saveButton{
   width: 250px;
@@ -586,6 +624,13 @@ li:focus {
   .saveButton{
     margin-top: 250px;
     width: 100px;
+  }
+}
+@media(max-width: 395px) {
+  .saveButton{
+    margin-top: 200px;
+    width: 80px;
+    margin-left: 340px;
   }
 }
 
@@ -654,6 +699,13 @@ li:focus {
     margin-top: -380px;
   }
 }
+@media(max-width: 395px) {
+  .poemsButton{
+    width: 50px;
+    margin-left: 80px;
+    margin-top: -380px;
+  }
+}
 
 .junoButton{
   position: absolute;
@@ -715,6 +767,12 @@ li:focus {
 .junoButton{
   margin-top: 30px;
   margin-left: 200px;
+}
+}
+@media(max-width: 395px){
+.junoButton{
+  margin-top: -90px;
+  margin-left: 100px;
 }
 }
 
