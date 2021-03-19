@@ -78,12 +78,6 @@ const Facts = () => {
                         <p className="titlePara">{poemProfile1.title}</p>
                         <p className="titleDef">{poemProfile1.definition}</p>
                     </div>
-
-                    {/* <div className="poetryTermsDiv poetryTerms2div">
-                        <p className="titlePara">{poemProfile2.title}</p>
-                        <p className="titleDef">{poemProfile2.definition}</p>
-                        <p className="linkPara">From <a href="https://www.writersdigest.com" className="factsLink">writersdigest.com</a></p>
-                    </div> */}
                 </section >
             </div>
         </>
