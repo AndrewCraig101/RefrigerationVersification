@@ -16,12 +16,11 @@ class Search extends Component {
 
             userSearch: "",
 
+            userSuggestion: [],
+
             chosenWord: [],
 
-            
-                x: document.innerWidth / 2,
-                y: document.innerHeight / 2,
-                dragging: false,
+            autoWords: [],
            
         }
         
@@ -33,41 +32,51 @@ class Search extends Component {
 
     handleChange = (e) => {
         this.setState({
-            userSearch: e.target.value
+            userSearch: e.target.value,
+            userSuggestion: e.target.value
         })
-        // this.setState({
-        //     suggestion: " ",
-        // })
-        //  axios({
-        //          url: `https://api.datamuse.com/sug?s=`,
-        //          params: {
-        //            s: this.state.userSearch,
-        //            max: 10,
-        //          }
-        //        }).then(res => {
-        //          // console.log(res)
-        //          setSuggestions(res.data)
-        //            console.log(setSuggestions)
-        //        }).catch((error) => {
-        //         // Error
-        //         if (error.response) {
-        //             // The request was made and the server responded with a status code
-        //             // that falls out of the range of 2xx
-        //             // console.log(error.response.data);
-        //             // console.log(error.response.status);
-        //             // console.log(error.response.headers);
-        //         } else if (error.request) {
-        //             // The request was made but no response was received
-        //             // `error.request` is an instance of XMLHttpRequest in the 
-        //             // browser and an instance of
-        //             // http.ClientRequest in node.js
-        //             console.log(error.request);
-        //         } else {
-        //             // Something happened in setting up the request that triggered an Error
-        //             console.log('Error', error.message);
-        //         }
-        //         console.log(error.config);
-        //     });  
+        this.setState({
+            suggestion: " ",
+        })
+         axios({
+                 url: `https://api.datamuse.com/sug?s=${this.state.userSuggestion}`, 
+                 params: {
+                   max: 5,
+                 }
+               }).then((res) => {
+                 // console.log(res)
+                    const autoresults = (res.data)
+                  
+
+
+                const suggestion = []
+
+                autoresults.map((autoword) => {
+                    return suggestion.push({
+                        word: autoword.word,
+                        id: autoword.id,
+                    })
+                })
+                this.setState({
+                    autoWords: suggestion,
+                })
+
+
+               }).catch((error) => {
+                // Error
+                if (error.response) {
+                   
+                    console.log(error.response.data);
+                  
+                } else if (error.request) {
+                   
+                    console.log(error.request);
+                } else {
+                    
+                    console.log('Error', error.message);
+                }
+                console.log(error.config);
+            });  
            
     }
 
@@ -131,23 +140,6 @@ class Search extends Component {
       }
 
 
-    // savePoemToFireBase = () => {
-    //     let poemText = [];
-    //     const poemArea = document.querySelector(".poemArea");
-    //     const poemAreaElements = poemArea.getElementsByTagName("li");
-    //     Array.from(poemAreaElements).forEach(item => {
-    //         poemText.push(item.innerText)
-    //     });
-    //     poemText = poemText.join("");
-    //     poemArea.innerHTML = "";
-    //     if (poemText !== "") {
-    //     const dbRef = firebase.database().ref();
-    //     dbRef.push(poemText);
-    //     } else {
-    //         console.log("poem is blank")
-    //     }
-    // }
-
 
     // this function allows us to only call api on user search
     userSearch = () => {
@@ -191,7 +183,21 @@ class Search extends Component {
             this.setState({
                 chosenWord: newState,
             })
-        })
+        }).catch((error) => {
+            // Error
+            if (error.response) {
+               
+                console.log(error.response.data);
+              
+            } else if (error.request) {
+               
+                console.log(error.request);
+            } else {
+                
+                console.log('Error', error.message);
+            }
+            console.log(error.config);
+        });  
 
     }
 
@@ -199,7 +205,6 @@ class Search extends Component {
 
     render() {
 
-        const { x, y, dragging } = this.state;
 
         
 
@@ -241,15 +246,26 @@ class Search extends Component {
 
         return (
            <section>
-
+               
                  <form onSubmit={this.handleSubmit} className="searchBar">
                     <label className="sr-only" htmlFor="search">Search</label>
-                    <input required type="text" placeholder="enter word here" id="search" value={this.state.userSearch} onChange={this.handleChange} ></input>
+                    <input required type="text" placeholder="enter word here" id="search" value={this.state.userSearch, this.state.userSuggestion} onChange={this.handleChange} ></input>
                     <button type="submit" onClick={this.handleClick}>Search</button>
+                    <div className="">
+                    {
+                        this.state.autoWords.map(
+                            (results, index) => {
+                                return (
+                                    <p key={index}>{results.word}</p>
+                                )
+                            }
+                        )
+                    }
+                    </div>
                 </form>
 
-
-
+               
+                
                  <div className="wordsContainer">
                     <div className="leftSide">
 
@@ -360,7 +376,7 @@ class Search extends Component {
 
                     <br />
                 </div>
-
+                
                 </section>
 
         )
