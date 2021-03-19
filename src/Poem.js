@@ -36,9 +36,10 @@ const Poem = () => {
 	return (
 
 
-		<div>
+		<div className="pastPoemContainer">
 			
-			<ul className="pastPoemContainer">
+			
+			<ul >
 				{
 					allPoems.map((poem) => {
 						return (
