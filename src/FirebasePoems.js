@@ -7,21 +7,24 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 
 
-function FirebasePoems () {
+function FirebasePoems() {
     return (
         <body className="firebase">
-            <main className="firebase-container">  
-            <Link to="/">
-                <PastLogo />
-             </Link>
-                <Facts/>
-                <section className="past-poems-container">
-                    <div className="imageContainer">
-                        <img src="./assets/fridge.png" className="fridgeImage" alt=""/>
-                    </div>
+            <main className="firebase-container">
+                <div>
+                    <Link to="/">
+                        <PastLogo />
+                    </Link>
+                </div>
                 <h1 className="firebaseTitle">Past Poems</h1>
-                    <Poem />
-                </section>
+                    <section className="past-poems-container">
+                        <div className="imageContainer">
+                            {/* <img src="./assets/fridge.png" className="fridgeImage" alt="" /> */}
+                        </div>
+                        <Poem />
+                        <Facts />
+                    </section>
+                
             </main>
         </body>
     )
