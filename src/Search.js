@@ -50,7 +50,7 @@ class Search extends Component {
                 autoresults.map((autoword) => {
                     return suggestion.push({
                         word: autoword.word,
-                        id: autoword.id,
+                        id: autoword.score,
                     })
                 })
                 this.setState({
