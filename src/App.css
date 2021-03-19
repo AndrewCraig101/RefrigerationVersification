@@ -48,7 +48,6 @@ img {
 /* ******MAIN SECTION******* */
 
 h1{
-  /* text-align: center; */
   position: relative;
 }
 
@@ -59,6 +58,56 @@ h1{
   height: 130vh;
   display: flex;
   overflow-y: hidden;
+}
+
+@media(max-width: 1300px){
+  .App{
+    background-image: url(./fridgeBackgroundTablet.png);
+      overflow-y: hidden;
+      height: 140vh;
+      background-size: cover;
+
+  }
+}
+
+@media(max-width: 1200px){
+  .App{
+    background-image: url(./fridgeBackgroundTablets900.png);
+      height: 180vh;
+  }
+}
+
+@media(max-width: 950px){
+  .App{
+    background-image: url(./mobilebackgroundnew.png);
+      overflow-y: hidden;
+      height: 150vh;
+      background-size: cover;
+  }
+}
+@media(max-width: 850px){
+  .App{
+    background-image: url(./mobilebackground800.png);
+      overflow-y: hidden;
+      height: 150vh;
+      background-size: cover;
+  }
+}
+@media(max-width: 750px){
+  .App{
+    background-image: url(./mobilebackground700.png);
+      overflow-y: hidden;
+      height: 150vh;
+      background-size: cover;
+  }
+}
+@media(max-width: 650px){
+  .App{
+    background-image: url(./mobilebackground500.png);
+      overflow-y: hidden;
+      height: 150vh;
+      background-size: cover;
+  }
 }
 
 .fridgeContainer{
@@ -83,6 +132,18 @@ main {
   width: 300px;
 }
 
+@media(max-width: 1100px) {
+  .logo{
+    width: 250px;
+  }
+}
+
+@media(max-width: 950px) {
+  .logo{
+    width: 200px;
+  }
+}
+
 
 
 
@@ -91,6 +152,25 @@ main {
 .searchBar {
   position: absolute;
   margin: -200px 0 0 300px;
+}
+
+
+@media(max-width: 1400px){
+  .searchBar{
+    margin-left: 260px;
+  }
+}
+
+@media(max-width: 1100px){
+  .searchBar{
+    margin-top: -150px;
+    margin-left: 220px;
+}
+}
+@media(max-width: 950px){
+  .searchBar{
+    margin-left: 180px;
+}
 }
 
 .autoResults {
@@ -104,6 +184,7 @@ main {
   display: flex;
   flex-wrap: wrap;
 }
+
 input[type="text"],
 button {
   border: 4px solid black;
@@ -113,13 +194,20 @@ button {
   text-transform: lowercase;
 }
 
+@media(max-width: 1400px){
+  input[type="text"],
+  button {
+  font-size: 1.5rem;
+  padding: 5px 6px;
+}
+}
+
 input[type="text"]:hover,
 input[type="text"]:focus,
 button:hover,
 button:focus{
   box-shadow:  3px 3px 0 0 #85fb83;
   z-index: 8;
-
 }
 
 
@@ -127,6 +215,19 @@ input[type="text"]{
   margin-right: 5px;
   width: 250px;
   transform: rotate(-1.8deg);
+}
+
+
+@media(max-width: 1400px){
+  input[type="text"]{
+    width: 200px;
+  }
+}
+
+@media(max-width: 1400px){
+  input[type="text"] {
+  width: 150px;
+}
 }
 
 button{
@@ -142,6 +243,19 @@ button{
     margin-top: -40px;
 }
 
+@media(max-width: 950px){
+.wordsContainer{
+    display: flex;
+    flex-direction: row;
+}
+}
+@media(max-width: 950px){
+.leftSide{
+    display: flex;
+    flex-direction: row;
+}
+}
+
 
 h2{
   margin: 0 auto;
@@ -152,7 +266,11 @@ h2{
   text-shadow: 1px 1px #85fb83, 4px 5px #1a4543 ;
   font-size: 3rem;
   font-weight: 700;
-
+}
+@media(max-width: 950px){
+  h2{
+    display:none;
+  }
 }
 
 
@@ -166,10 +284,71 @@ h2{
   height: 230px;
   padding: 10px;
   border: 8px solid #1a4543;
+  border-radius: 10px 10px 10px 10px;
   margin: 5px 0 10px 100px;
   overflow: auto;
   padding: 6px;
   z-index: 5;
+}
+
+
+@media(max-width: 1400px){
+  .dropBox{
+    width: 350px;
+  }
+}
+@media(max-width: 1190px){
+  .dropBox{
+    width: 300px;
+  }
+}
+@media(max-width: 1100px){
+  .dropBox{
+    margin-left: 80px;
+    width: 250px;
+  }
+}
+@media(max-width: 950px){
+  .dropBox{
+    margin: 0 auto;
+    margin-top: -25%;
+    margin-left: 100px;
+    padding: 0;
+    height: 200px;
+  }
+}
+
+@media(max-width: 950px){
+  .dropBox:first-of-type{
+  margin: 0 auto;
+  margin-top: -12%;
+  margin-left: 250px;
+  padding: 0;
+  }
+}
+@media(max-width: 950px){
+  .dropBox:nth-of-type(2){
+  margin: 0 auto;
+  margin-top: -12%;
+  margin-left: 10px;
+  }
+}
+@media(max-width: 850px){
+  .dropBox:first-of-type{
+  margin-top: -12%;
+  margin-left: 180px;
+
+  }
+}
+@media(max-width: 750px){
+  .dropBox{
+    width: 200px;
+  }
+}
+@media(max-width: 650px){
+  .dropBox{
+    width: 180px;
+  }
 }
 
 .dropBox.suffixArea {
@@ -206,6 +385,11 @@ li {
     text-align: center;
     transition: 0.8s;
 }
+@media(max-width: 650px){
+  li{
+    font-size: 1.2rem;
+  }
+}
 
 li:nth-of-type(odd) {
     transform: rotate(1.4deg);
@@ -239,6 +423,48 @@ li:focus {
   position: absolute;
 }
 
+@media(max-width: 1400px){
+.rightSide{
+  max-width: 800px;
+}
+}
+
+@media(max-width: 1290px){
+  .rightSide{
+    margin-left: 60%;
+  }
+}
+@media(max-width: 1190px){
+  .rightSide{
+    margin-left: 40%;
+    margin-top: 20%;
+  }
+}
+@media(max-width: 1100px){
+  .rightSide{
+    margin-left: 40%;
+    margin-top: 50%;
+  }
+}
+@media(max-width: 950px){
+  .rightSide{
+    margin-left: -70%;
+    margin-top: -350px;
+  }
+}
+@media(max-width: 850px){
+  .rightSide{
+    margin-top: -380px;
+  }
+}
+@media(max-width: 850px){
+  .rightSide{
+    margin-left: -30%;
+    margin-top: -430px;
+  }
+}
+
+
 .rightSide h2{
   display: none;
 }
@@ -250,14 +476,39 @@ li:focus {
   margin-top: -1190px;
   width: 800px;
   border: none;
-  box-shadow: none;
-  background-color: none;
   z-index: 7;
   position: relative;
   height: 200px;
   overflow: auto;
   padding: 0 50px;
-  background-color: tomato;
+   border: none;
+  border-radius: none;
+  background-color: none;
+  box-shadow: none;
+}
+
+@media(max-width: 1100px) {
+  .poemArea{
+    height: 150px;
+    max-width: 450px;
+  }
+}
+
+@media(max-width: 950px) {
+  .poemArea{
+    max-width: 550px;
+    height: 230px;
+  }
+}
+@media(max-width: 850px) {
+  .poemArea{
+    height: 150px;
+  }
+}
+@media(max-width: 850px) {
+  .poemArea{
+    max-width: 300px;
+  }
 }
 
 .saveButton{
@@ -265,12 +516,62 @@ li:focus {
   margin-left: 310px;
 }
 
+@media(max-width: 850px) {
+  .saveButton{
+    width: 100px;
+  }
+}
+
 .poemsButton{
   position: absolute;;
   z-index: 6;
   width: 100px;
   margin-left: 1180px;
-  margin-top: -1300px;
+  margin-top: -1150px;
+}
+
+@media(max-width: 1400px){
+.poemsButton{
+  margin-left: 1120px;
+}
+}
+
+@media(max-width: 1290px){
+  .poemsButton{
+    width: 90px;
+    margin-left: 1050px;
+  }
+}
+@media(max-width: 1190px){
+  .poemsButton{
+    margin-left: 980px;
+  }
+}
+
+@media(max-width: 1100px) {
+  .poemsButton{
+    margin-left: 900px;
+    margin-top: -1200px;
+  }
+}
+@media(max-width: 1030px) {
+  .poemsButton{
+    margin-left: 820px;
+    margin-top: -1250px;
+  }
+}
+@media(max-width: 950px) {
+  .poemsButton{
+    margin-left: 140px;
+    margin-top: -500px;
+  }
+}
+@media(max-width: 650px) {
+  .poemsButton{
+    width: 80px;
+    margin-left: 140px;
+    margin-top: -550px;
+  }
 }
 
 .junoButton{
@@ -282,16 +583,52 @@ li:focus {
   margin-top: -590px;
 }
 
+@media(max-width: 1400px){
+.junoButton{
+  margin-top: -750px;
+}
+}
+
+@media(max-width: 1300px){
+.junoButton{
+  margin-top: -650px;
+  margin-left: 700px;
+}
+}
+@media(max-width: 1200px){
+.junoButton{
+  margin-top: -680px;
+}
+}
+@media(max-width: 950px){
+.junoButton{
+  margin-top: -150px;
+  margin-left: 550px;
+}
+}
+@media(max-width: 850px){
+.junoButton{
+  margin-top: 50px;
+  margin-left: 350px;
+}
+}
+@media(max-width: 750px){
+.junoButton{
+  margin-top: 10px;
+  margin-left: 350px;
+}
+}
+@media(max-width: 750px){
+.junoButton{
+  margin-top: -80px;
+  width: 140px;
+}
+}
+
+  
+
+
 /* **********FIREBASE PAGE********** */
-
-/* .firebaseContainer {
-  display: flex;
-  flex-direction: column;
-} */
-
-/* .fridgeFlex {
-  align-self: flex-start;
-} */
 
 
 .firebase {
@@ -301,31 +638,29 @@ li:focus {
   overflow: auto;
 }
 
+@media(max-width:1100px){
+  .firebase{
+    background-image: url(./darkwaves3.png);
+    background-size: cover;
+    background-repeat: repeat;
+  }
+}
+
 .fridgeImage{
 
   position: relative;
 
-  /* top: -310px; */
   display: block;
   margin: 0 auto;
-  /* margin-top: -55%; */
   z-index: 1;
   width: 80%;
   height: auto;
 }
 
-/* @media(max-width: 900px){
-  .fridgeImage{
-    margin-top: 20px;
-    width: 90%;
-  }
-} */
-
 .firebaseTitle{
   font-size: 6rem;
   margin: 0 auto;
   text-align: center;
-  /* margin-bottom: 0px; */
   text-transform: lowercase;
   color: white;
   text-shadow: 1px 1px #85fb83, 4px 5px #1a4543 ;
@@ -334,19 +669,10 @@ li:focus {
   top: -100px;
   padding-top: 20px;
   padding-bottom: 20px;
-  /* z-index: 6; */
 }
 
-/* @media(max-width: 900px){
-  .firebaseTitle{
-    font-size: calc(4rem - 1vw);
-    margin-top: -40px;
-  }
-} */
-
-
 .pastPoemContainer {
-  background-color: #DADADA;
+  background-color: rgb(26, 69, 67, 0.7);
   height: 300px;
   width: 80%;
   border-radius: 10px 10px 10px 10px;
@@ -355,8 +681,6 @@ li:focus {
   text-align: center;
   margin-top: 10px;
   overflow-y: scroll;
-  /* margin-left: 20%; */
-  /* overflow: auto; */
   position: relative;
   top: -100px;
   z-index: 5;
@@ -364,7 +688,7 @@ li:focus {
 
 @media(max-width: 900px){
   .pastPoemContainer{
-    width: 500px;
+    width: 80%;
     height: 300px;
     word-break: break-all;
   }
@@ -373,8 +697,7 @@ li:focus {
 @media(max-width: 660px){
   .pastPoemContainer{
     margin-top: 20px;
-    width: 400px;
-    height: 200px;
+    height: 400px;
     word-break: break-all;
   }
 }
@@ -382,8 +705,7 @@ li:focus {
 @media(max-width: 525px){
   .pastPoemContainer{
     margin-top: 20px;
-    width: 300px;
-    height: 150px;
+    height: 450px;
     word-break: break-all;
   }
   .pastPoemContainer li {
@@ -407,28 +729,18 @@ li:focus {
   margin: 10px;
 }
 
-/* @media(max-width: 900px){
-  .pastPoemElement{
-    font-size: calc(2rem - 1vw);
-  }
-} */
 
 
 
 
 /* *******FACTS ELEMENT******* */
 .factWrapper {
-  /* position: relative; */
-  /* top: 300px; */
-  /* left: 500px; */
-  /* margin-top: 300px; */
   max-width: 300px;
   width:80%;
   margin: 0 auto;
   background: url(./factsPostIt.png);
   background-size: 100%;
   z-index: 8;
-  /* margin-bottom: 50px; */
 }
 
 .poetryDivSection {
@@ -436,7 +748,6 @@ li:focus {
     justify-content: center;
     align-items: center;
     width: 100%;
-    /* margin-top: 50px; */
     margin-bottom: 50px;
     margin-top: -50px;
 }
@@ -448,8 +759,7 @@ li:focus {
     width: 80%;
     padding: 10px;
     overflow: auto;
-    height: 300px;
-    
+    height: 300px; 
 }
 
 .titlePara {
@@ -470,6 +780,11 @@ li:focus {
     height: 150px;
     overflow: auto;
 }
+
+
+
+/* **********MEDIA QUERIES********** */
+
 
 
 
