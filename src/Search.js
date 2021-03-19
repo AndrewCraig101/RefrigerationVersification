@@ -37,7 +37,7 @@ class Search extends Component {
             suggestion: " ",
         })
          axios({
-                 url: `https://api.datamuse.com/sug?sp=${this.state.userSuggestion}`, 
+                 url: `https://api.datamuse.com/sug?s=${this.state.userSuggestion}`, 
                  params: {
                    max: 5,
                  }
@@ -216,16 +216,16 @@ class Search extends Component {
                     <button type="submit" onClick={this.handleClick}>Search</button>
                     <div className="autoResults">
                         <ul>
-                    {
-                        this.state.autoWords.map(
-                            (results, index) => {
-                                return (
-                                    <li key={results.score}>{results.word}</li>
+                            {
+                                this.state.autoWords.map(
+                                    (results, index) => {
+                                        return (
+                                            <li key={index}>{results.word}</li>
+                                        )
+                                    }
                                 )
                             }
-                        )
-                    }
-                    </ul>
+                        </ul>
                     </div>
                 </form>
 
@@ -238,19 +238,19 @@ class Search extends Component {
                         <div class="dropBox resultsArea" draggable="true" onDrop={this.drop} onDragStart={this.drag} onDragOver={this.allowDrop}>
                             
 
-                        <ul >
-                            {
-                                this.state.chosenWord.map((results, index ) => {
-                                return (
-                                    <li  id={results.id} onDragStart={this.drag} draggable="true" key={index}>{results.word}&nbsp;</li>
-                                    
+                            <ul >
+                                {
+                                    this.state.chosenWord.map((results, index ) => {
+                                    return (
+                                        <li  id={results.id} onDragStart={this.drag} draggable="true" key={index}>{results.word}&nbsp;</li>
                                         
-                                )
-                                })
-                            }
-                        </ul>
+                                            
+                                    )
+                                    })
+                                }
+                            </ul>
                     
-                            </div>
+                        </div>
             
                
                 
@@ -259,62 +259,62 @@ class Search extends Component {
                         <div class="dropBox suffixArea" onDrop={this.drop} onDragStart={this.drag} onDragOver={this.allowDrop}>
                             <ul>
                                 <h3>Questions</h3>
-                                {
-                                    questionWords.map((word, index) => {
-                                        return (
-                                            <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}&nbsp; </li>
-                                        )
-                                    })
-                                }
+                                    {
+                                        questionWords.map((word, index) => {
+                                            return (
+                                                <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}&nbsp; </li>
+                                            )
+                                        })
+                                    }
                                 <h3>Pronouns</h3>
-                                {
-                                    pronouns.map((word, index) => {
-                                        return (
-                                            <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}&nbsp; </li>
-                                        )
-                                    })
-                                }
+                                    {
+                                        pronouns.map((word, index) => {
+                                            return (
+                                                <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}&nbsp; </li>
+                                            )
+                                        })
+                                    }
                                 <h3>Articles</h3>
-                                {
-                                    articleWords.map((word, index) => {
-                                        return (
-                                            <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}&nbsp; </li>
-                                        )
-                                    })
-                                }
+                                    {
+                                        articleWords.map((word, index) => {
+                                            return (
+                                                <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}&nbsp; </li>
+                                            )
+                                        })
+                                    }
                                 <h3>Conjunctions</h3>
-                                {
-                                    conjunction.map((word, index) => {
-                                        return (
-                                            <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}&nbsp; </li>
-                                        )
-                                    })
-                                }
+                                    {
+                                        conjunction.map((word, index) => {
+                                            return (
+                                                <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}&nbsp; </li>
+                                            )
+                                        })
+                                    }
                                 <h3>Verbs</h3>
-                                {
-                                    verbs.map((word, index) => {
-                                        return (
-                                            <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}&nbsp; </li>
-                                        )
-                                    })
-                                }
+                                    {
+                                        verbs.map((word, index) => {
+                                            return (
+                                                <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}&nbsp; </li>
+                                            )
+                                        })
+                                    }
                                 <h3>Prepositions</h3>
-                                {
-                                    preposition.map((word, index) => {
-                                        return (
-                                            <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}&nbsp; </li>
-                                        )
-                                    })
-                                }
-                                    <h3>Punctuation</h3>
-                                {
-                                    constantPunctuation.map((word, index) => {
-                                        return (
-                                            <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}&nbsp;</li>
-                                        )
-                                    })
-                                }
-                                    <h3>Emoji</h3>
+                                    {
+                                        preposition.map((word, index) => {
+                                            return (
+                                                <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}&nbsp; </li>
+                                            )
+                                        })
+                                    }
+                                <h3>Punctuation</h3>
+                                    {
+                                        constantPunctuation.map((word, index) => {
+                                            return (
+                                                <li id={word.id} onDragStart={this.drag} draggable="true" key={index}>{word.word}&nbsp;</li>
+                                            )
+                                        })
+                                    }
+                                <h3>Emoji</h3>
                                 {
                                     emojis.map((word, index) => {
                                         return (
