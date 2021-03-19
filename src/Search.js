@@ -235,7 +235,7 @@ class Search extends Component {
                     <div className="leftSide">
 
                         <h2>Results</h2>
-                        <div class="dropBox resultsArea" draggable="true" onDrop={this.drop} onDragStart={this.drag}>
+                        <div class="dropBox resultsArea" draggable="true" onDrop={this.drop} onDragStart={this.drag} onDragOver={this.allowDrop}>
                             
 
                         <ul >
@@ -256,7 +256,7 @@ class Search extends Component {
                 
                         <br />
                         <h2>Helpful Words</h2>
-                        <div class="dropBox suffixArea" onDrop={this.drop} onDragStart={this.drag}>
+                        <div class="dropBox suffixArea" onDrop={this.drop} onDragStart={this.drag} onDragOver={this.allowDrop}>
                             <ul>
                                 <h3>Questions</h3>
                                 {
