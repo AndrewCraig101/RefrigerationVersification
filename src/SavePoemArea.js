@@ -4,11 +4,9 @@ import { Component } from 'react';
 class SavePoemArea extends Component {
 
 	constructor() {
-        //when using a constructor super is necessary because it allows us to use "this" 
         super();
 
 
-        //state is initialized to create an array from the user input value
         this.state = {
 
             userSearch: "",
@@ -46,7 +44,6 @@ class SavePoemArea extends Component {
 
     drop = (e) => {
         e.preventDefault();
-        // Get the data, which is the id of the drop target
         let data = e.dataTransfer.getData("text");
         e.target.append(document.getElementById(data));
     }

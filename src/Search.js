@@ -37,7 +37,7 @@ class Search extends Component {
             suggestion: " ",
         })
          axios({
-                 url: `https://api.datamuse.com/sug?s=${this.state.userSuggestion}`, 
+                 url: `https://api.datamuse.com/sug?sp=${this.state.userSuggestion}`, 
                  params: {
                    max: 5,
                  }
@@ -220,7 +220,7 @@ class Search extends Component {
                         this.state.autoWords.map(
                             (results, index) => {
                                 return (
-                                    <li key={index}>{results.word}</li>
+                                    <li key={results.score}>{results.word}</li>
                                 )
                             }
                         )
@@ -242,7 +242,7 @@ class Search extends Component {
                             {
                                 this.state.chosenWord.map((results, index ) => {
                                 return (
-                                    <li  id={results} onDragStart={this.drag} draggable="true" key={index}>{results.word}&nbsp;</li>
+                                    <li  id={results.id} onDragStart={this.drag} draggable="true" key={index}>{results.word}&nbsp;</li>
                                     
                                         
                                 )
@@ -328,6 +328,7 @@ class Search extends Component {
 
                         </div>
                     </div>
+                    
 
                     <br />
                 </div>
