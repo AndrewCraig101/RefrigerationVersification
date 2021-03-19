@@ -52,7 +52,7 @@ h1{
 }
 
 .App {
-  background-image: url(./backgroundFridge.png);
+  background-image: url(./backgroundImages/backgroundFridge.png);
   background-size: cover;
   background-repeat: no-repeat;  
   height: 130vh;
@@ -62,7 +62,7 @@ h1{
 
 @media(max-width: 1300px){
   .App{
-    background-image: url(./fridgeBackgroundTablet.png);
+    background-image: url(./backgroundImages/fridgeBackgroundTablet.png);
       overflow-y: hidden;
       height: 140vh;
       background-size: cover;
@@ -72,14 +72,14 @@ h1{
 
 @media(max-width: 1200px){
   .App{
-    background-image: url(./fridgeBackgroundTablets900.png);
+    background-image: url(./backgroundImages/fridgeBackgroundTablets900.png);
       height: 180vh;
   }
 }
 
 @media(max-width: 950px){
   .App{
-    background-image: url(./mobilebackgroundnew.png);
+    background-image: url(./backgroundImages/mobilebackgroundnew.png);
       overflow-y: hidden;
       height: 150vh;
       background-size: cover;
@@ -87,7 +87,7 @@ h1{
 }
 @media(max-width: 850px){
   .App{
-    background-image: url(./mobilebackground800.png);
+    background-image: url(./backgroundImages/mobilebackground800.png);
       overflow-y: hidden;
       height: 150vh;
       background-size: cover;
@@ -95,7 +95,7 @@ h1{
 }
 @media(max-width: 750px){
   .App{
-    background-image: url(./mobilebackground700.png);
+    background-image: url(./backgroundImages/mobilebackground700.png);
       overflow-y: hidden;
       height: 200vh;
       background-size: cover;
@@ -103,7 +103,7 @@ h1{
 }
 @media(max-width: 650px){
   .App{
-    background-image: url(./mobilebackground500.png);
+    background-image: url(./backgroundImages/mobilebackground500.png);
       overflow-y: hidden;
       height: 210vh;
       background-size: cover;
@@ -113,7 +113,15 @@ h1{
 
 @media(max-width: 550px){
   .App{
-    background-image: url(./mobilebackground450.png);
+    background-image: url(./backgroundImages/mobilebackground450.png);
+      overflow-y: hidden;
+      height: 230vh;
+      background-size: cover;
+  }
+}
+@media(max-width: 490px){
+  .App{
+    background-image: url(./backgroundImages/mobilebackground300.png);
       overflow-y: hidden;
       height: 230vh;
       background-size: cover;
@@ -153,10 +161,6 @@ main {
     width: 200px;
   }
 }
-
-
-
-
 /* ********SEARCH SECTION******* */
 
 .searchBar {
@@ -368,6 +372,15 @@ h2{
     left: 100px;
   }
 }
+@media(max-width: 490px){
+  .dropBox{
+    height: 110px;
+    position: absolute;
+    top: 230px;
+    left: 50px;
+    width: 150px;
+  }
+}
 
 .dropBox.suffixArea {
   margin-bottom: 100px;
@@ -406,6 +419,11 @@ li {
 @media(max-width: 650px){
   li{
     font-size: 1.2rem;
+  }
+}
+@media(max-width: 490px){
+  li{
+    font-size: 1rem;
   }
 }
 
@@ -487,6 +505,12 @@ li:focus {
     margin-top: -470px;
   }
 }
+@media(max-width: 490px){
+  .rightSide{
+    margin-left: -210%;
+    margin-top: -520px;
+  }
+}
 
 
 .rightSide h2{
@@ -535,6 +559,12 @@ li:focus {
     height: 100px;
   }
 }
+@media(max-width: 490px) {
+  .poemArea{
+    background-color: tomato;
+    height: 100px;
+  }
+}
 
 .saveButton{
   width: 250px;
@@ -549,6 +579,12 @@ li:focus {
 @media(max-width: 550px) {
   .saveButton{
     margin-top: 300px;
+    width: 100px;
+  }
+}
+@media(max-width: 550px) {
+  .saveButton{
+    margin-top: 250px;
     width: 100px;
   }
 }
@@ -611,6 +647,13 @@ li:focus {
     margin-top: -260px;
   }
 }
+@media(max-width: 490px) {
+  .poemsButton{
+    width: 80px;
+    margin-left: 90px;
+    margin-top: -380px;
+  }
+}
 
 .junoButton{
   position: absolute;
@@ -668,6 +711,12 @@ li:focus {
   margin-left: 200px;
 }
 }
+@media(max-width: 490px){
+.junoButton{
+  margin-top: 30px;
+  margin-left: 200px;
+}
+}
 
   
 
@@ -676,7 +725,7 @@ li:focus {
 
 
 .firebase {
-  background-image: url(./darkwaves.png);
+  background-image: url(./backgroundImages/darkwaves.png);
   background-size: cover;
   background-repeat: no-repeat;  
   overflow: auto;
@@ -684,7 +733,7 @@ li:focus {
 
 @media(max-width:1100px){
   .firebase{
-    background-image: url(./darkwaves3.png);
+    background-image: url(./backgroundImages/darkwaves3.png);
     background-size: cover;
     background-repeat: repeat;
   }
@@ -782,7 +831,7 @@ li:focus {
   max-width: 300px;
   width:80%;
   margin: 0 auto;
-  background: url(./factsPostIt.png);
+  background: url(./backgroundImages/factsPostIt.png);
   background-size: 100%;
   z-index: 8;
 }
