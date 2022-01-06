@@ -129,9 +129,8 @@ class Search extends Component {
                 (results.word === 'who' || results.word === "what" || results.word === "when" || results.word === "where" || results.word === "why" || results.word === "how" || results.word === "I" || results.word === "he" || results.word === "his" || results.word === "she" || results.word === "her" || results.word === "hers" || results.word === "they" || results.word === "them" || results.word === "their" || results.word === "there" || results.word === "this" || results.word === "you" || results.word === "your" || results.word === "me" || results.word === "we" || results.word === "it" || results.word === "they" || results.word === "a" || results.word === "an" || results.word === "and" || results.word === "or" || results.word === "that" || results.word === "are" || results.word === "is" || results.word === "was" || results.word === "had" || results.word === "will" || results.word === "can" || results.word === "would" || results.word === "went" || results.word === "did" || results.word === "said" || results.word === "for" || results.word === "but" || results.word === "in" || results.word === "on" || results.word === "as" || results.word === "of" || results.word === "by" || results.word === "from" || results.word === "out" || results.word === "with" || results.word === "like" || results.word === "to" || results.word === ".") 
                     {
                         results = null
-                    } else {
-                    return results.word
                 } 
+                return results.word
             })
         
             const newState = []
@@ -210,7 +209,7 @@ class Search extends Component {
                
                  <form onSubmit={this.handleSubmit} className="searchBar">
                     <label className="sr-only" htmlFor="search">Search</label>
-                    <input required type="text" placeholder="enter word here" id="search" value={this.state.userSearch, this.state.userSuggestion} onChange={this.handleChange} ></input>
+                    <input required type="text" placeholder="enter word here" id="search" value={this.state.userSearchthis.state.userSuggestion} onChange={this.handleChange} ></input>
                     <button type="submit" onClick={this.handleClick}>Search</button>
                     <div className="autoResults">
                         <ul>

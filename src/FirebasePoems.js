@@ -2,7 +2,7 @@ import './App.css';
 import Poem from './Poem';
 import Facts from './Facts';
 import PastLogo from './PastLogo';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Link } from 'react-router-dom';
 
 
 
