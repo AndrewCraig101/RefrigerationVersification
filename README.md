@@ -1,3 +1,10 @@
+This was a collaboration with three colleagues.
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
